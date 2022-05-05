@@ -1,7 +1,13 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(#326a84, #d3f1ff);
 }
-
+.Link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +41,96 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* .feedback.Mui-selected {
+  color: "blue";
+} */
+
+.nav-item {
+  color: white;
+  text-align: end;
+  align-items: legacy;
+  display: flex;
+}
+.nav-item:hover {
+  cursor: pointer;
+  background-color: white;
+  color: cornflowerblue;
+  border-radius: 10px;
+  padding: 7px 7px 7px 7px;
+}
+
+.city-data {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  margin-top: 4px;
+}
+
+.auto-complete {
+  color: white;
+  /* background-color: white; */
+}
+
+.MuiAutocomplete-root {
+  color: white;
+  font-size: 10px;
+}
+
+.main_navigation_item {
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.connect-icons {
+  margin: 15px;
+}
+
+.main_navigation_item:hover {
+  /* border-bottom-width: 50pc; */
+  /* position: absolute; */
+  bottom: 0px;
+  /* left: 25%; */
+  width: 50%;
+
+  cursor: pointer;
+  border-bottom: 2px solid white;
+}
+
+.main_navigation_item:active {
+  border-bottom: 2px solid white;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  /* border: 1px solid black; */
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.tempButton:active {
+  background-color: aqua;
+}
+
+.right-border {
+  border-right: 4px solid;
+  /* margin: 10px; */
+}
+
+.feedback,
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
 }

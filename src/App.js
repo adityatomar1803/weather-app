@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import MainComponent from "./components/MainComponent";
+import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
+
+// import DonutChart from "react-donut-chart";
+// import { Pie } from "react-chartjs-2/dist/index";
+import { Doughnut } from "react-chartjs-2";
+Chart.register(Tooltip, Title, ArcElement, Legend);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainComponent />
     </div>
   );
 }
