@@ -109,7 +109,7 @@ const Today = ({ city }) => {
             <div>{day_data.night.clouds}%</div>
           </Grid>
 
-          <Grid item xs={12} marginTop="20px" marginBottom="10px">
+          <Grid item xs={12} marginTop="25px" marginBottom="25px">
             <Button
               variant="contained"
               sx={{

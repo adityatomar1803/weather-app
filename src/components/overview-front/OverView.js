@@ -64,16 +64,23 @@ const OverView = ({ city }) => {
       <Grid
         container
         className="card"
-        style={{ border: "2px solid black" }}
-        sx={{ color: "white" }}
+        // style={{ border: "2px solid black" }}
+        sx={{ color: "black", backgroundColor: "white" }}
       >
         <Grid item xs={12}>
-          <Typography variant="h5" component="div" textAlign={"center"}>
+          <Typography
+            variant="h5"
+            component="div"
+            textAlign={"center"}
+            sx={{
+              fontSize: "30px",
+              fontWeight: "bold",
+              marginTop: "20px",
+            }}
+          >
             {city}{" "}
           </Typography>
-          <span fontSize="10px" color="white">
-            As of {update_time(final_res.current.dt)}
-          </span>
+          <span fontSize="10px">As of {update_time(final_res.current.dt)}</span>
         </Grid>
 
         <Grid container className="card-content">
@@ -81,6 +88,7 @@ const OverView = ({ city }) => {
           <Grid item xs={12} md={4}>
             <img
               src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
+              // src={"../../data/3d_icons/moon/11.png"}
               height="200px"
               // width="30%"
             />
@@ -96,13 +104,17 @@ const OverView = ({ city }) => {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: "61px" }}>{temp}</div>
+              <div
+                style={{ fontSize: "61px", fontWeight: "bold", color: "blue" }}
+              >
+                {temp}
+              </div>
 
               <ButtonGroup
                 orientation="vertical"
                 aria-label="vertical outlined button group"
                 variant="outlined"
-                size="small"
+                size="normal"
                 style={{
                   display: "flex",
                   flexDirection: "column",

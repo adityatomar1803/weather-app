@@ -83,7 +83,8 @@ const AirQuality = () => {
             variant="h5"
             component="div"
             textAlign={"center"}
-            marginBottom={"10px"}
+            marginBottom={"15px"}
+            marginTop="20px"
           >
             Air Quality Index
           </Typography>
@@ -95,7 +96,7 @@ const AirQuality = () => {
           md={6}
           style={{
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "center",
           }}
         >
           {/* <div> */}
@@ -125,11 +126,11 @@ const AirQuality = () => {
           {comment}
         </Grid>
 
-        <Grid item xs={12} margin="10px">
+        <Grid item xs={12} margin="15px" marginTop="20px">
           {advice}
         </Grid>
 
-        <Grid item xs={12} marginTop="10px" marginBottom="10px">
+        <Grid item xs={12} marginTop="10px" marginBottom="20px">
           <Button
             variant="contained"
             sx={{
