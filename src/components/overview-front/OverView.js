@@ -4,6 +4,8 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import { ButtonGroup } from "@mui/material";
 import { Grid } from "@mui/material";
+// import logo from "../../data/logo.png";
+import srf from "../../data/3d_icons/sun/4.png";
 // import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 import CardContent from "@mui/material/CardContent";
@@ -63,9 +65,13 @@ const OverView = ({ city }) => {
     return (
       <Grid
         container
-        className="card"
+        className="card main-card"
         // style={{ border: "2px solid black" }}
-        sx={{ color: "black", backgroundColor: "white" }}
+        sx={{
+          color: "white",
+          // backgroundColor: "white",
+          // backgroundImage: `url('https://icons8.com/photos/photo/nature--621d1baf92a9c1000164c644')`,
+        }}
       >
         <Grid item xs={12}>
           <Typography
@@ -75,21 +81,26 @@ const OverView = ({ city }) => {
             sx={{
               fontSize: "30px",
               fontWeight: "bold",
-              marginTop: "20px",
+              marginTop: "15px",
+              // color: "blue",
+              background: "rgba(40, 40, 40, 0.3)",
+              padding: "5px",
             }}
           >
             {city}{" "}
           </Typography>
-          <span fontSize="10px">As of {update_time(final_res.current.dt)}</span>
+          <span fontSize="10px" color="#5c64d2">
+            As of {update_time(final_res.current.dt)}
+          </span>
         </Grid>
 
-        <Grid container className="card-content">
+        <Grid container className="card-content" marginBottom="20px">
           {/* /////// Image Grid ///////// */}
           <Grid item xs={12} md={4}>
             <img
-              src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
-              // src={"../../data/3d_icons/moon/11.png"}
-              height="200px"
+              // src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
+              src={srf}
+              height="150px"
               // width="30%"
             />
           </Grid>
@@ -104,11 +115,7 @@ const OverView = ({ city }) => {
                 alignItems: "center",
               }}
             >
-              <div
-                style={{ fontSize: "61px", fontWeight: "bold", color: "blue" }}
-              >
-                {temp}
-              </div>
+              <div style={{ fontSize: "61px", fontWeight: "bold" }}>{temp}</div>
 
               <ButtonGroup
                 orientation="vertical"

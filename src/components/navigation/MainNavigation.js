@@ -3,9 +3,40 @@ import { Grid } from "@mui/material";
 import DailyCard from "../cards/DailyCard";
 import { HourlyCard } from "../cards/HourlyCard";
 import Home from "../overview-front/Home";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  useResolvedPath,
+  useMatch,
+} from "react-router-dom";
+
+function CustomLink({ children, to, ...props }) {
+  let resolved = useResolvedPath(to);
+  let match = useMatch({ path: resolved.pathname, end: true });
+
+  return (
+    <div>
+      <Link
+        style={{
+          display: "block",
+          borderBottom: match ? "2px solid white" : "none",
+          paddingBottom: "10px",
+        }}
+        to={to}
+        {...props}
+      >
+        {children}
+      </Link>
+      {match && ""}
+    </div>
+  );
+}
 
 const MainNavigation = ({ city }) => {
+  // let  = useMatch('/');
+  // console.log(useMatch("/"));
   return (
     <Router>
       <Grid
@@ -15,28 +46,28 @@ const MainNavigation = ({ city }) => {
         padding={"5px"}
         backgroundColor={"#0E2333"}
       >
-        <Grid item md={2} sm={2} className="main_navigation_item">
-          <Link to="/" className="Link">
+        <Grid item md={2} sm={2}>
+          <CustomLink to="/" className="Link">
             Today
-          </Link>
+          </CustomLink>
         </Grid>
-        <Grid item md={2} sm={2} className="main_navigation_item">
-          <Link to="/hourly" className="Link">
+        <Grid item md={2} sm={2}>
+          <CustomLink to="/hourly" className="Link">
             Hourly
-          </Link>
+          </CustomLink>
         </Grid>
-        <Grid item md={2} sm={2} className="main_navigation_item">
-          <Link to="/weekly" className="Link">
+        <Grid item md={2} sm={2}>
+          <CustomLink to="/weekly" className="Link">
             Weekly
-          </Link>
+          </CustomLink>
         </Grid>
-        <Grid item md={2} sm={2} className="main_navigation_item">
-          <Link to="/statistics" className="Link">
+        <Grid item md={2} sm={2}>
+          <CustomLink to="/statistics" className="Link">
             Statistics
-          </Link>
+          </CustomLink>
         </Grid>
-        <Grid item md={2} sm={2} className="main_navigation_item">
-          aise hi
+        <Grid item md={2} sm={2} className="Link">
+          Maps
         </Grid>
       </Grid>
       <Routes>

@@ -1,12 +1,15 @@
 .App {
   text-align: center;
   background-image: linear-gradient(#326a84, #d3f1ff);
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
 }
 .Link {
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
 }
+
 /*
 .App-logo {
   height: 40vmin;
@@ -116,6 +119,12 @@
   /* border: 1px solid black; */
   margin: 10px;
   border-radius: 10px;
+}
+
+.main-card {
+  background-image: url("data/clouds-in-the-sky.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
 }
 
 .tempButton:active {

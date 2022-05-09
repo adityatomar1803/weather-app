@@ -42,6 +42,10 @@ export const update_time = (timestamp) => {
   var date = new Date(timestamp * 1000);
   // Hours part from the timestamp
   var hours = date.getHours();
+  // if (hours < 10) {
+  //   hours = "0" + hours;
+  // }
+
   // Minutes part from the timestamp
   var minutes = "0" + date.getMinutes();
   // Seconds part from the timestamp

@@ -53,7 +53,7 @@ const Today = ({ city }) => {
         </div>
         <Grid container fontSize="larger">
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div> Morning</div>
+            <div style={{ marginBottom: "10px" }}> Morning</div>
             <div
               style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
             >
@@ -64,10 +64,17 @@ const Today = ({ city }) => {
               height="auto"
               alt="ico-img"
             />
-            <div>{day_data.morning.clouds}%</div>
+            <div>
+              {day_data.morning.clouds}%
+              <img
+                height="15px"
+                src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
+                // style={{ transform: "rotateX(45)" }}
+              />
+            </div>
           </Grid>
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div> Afternoon</div>
+            <div style={{ marginBottom: "10px" }}> Afternoon</div>
             <div
               style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
             >
@@ -78,10 +85,17 @@ const Today = ({ city }) => {
               height="auto"
               alt="ico-img"
             />
-            <div>{day_data.afternoon.clouds}%</div>
+            <div>
+              {day_data.afternoon.clouds}%
+              <img
+                height="15px"
+                src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
+                // style={{ transform: "rotateX(45)" }}
+              />
+            </div>
           </Grid>
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div> Evening</div>
+            <div style={{ marginBottom: "10px" }}> Evening</div>
             <div
               style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
             >
@@ -92,10 +106,17 @@ const Today = ({ city }) => {
               height="auto"
               alt="ico-img"
             />
-            <div>{day_data.evening.clouds}%</div>
+            <div>
+              {day_data.evening.clouds}%
+              <img
+                height="15px"
+                src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
+                // style={{ transform: "rotateX(45)" }}
+              />
+            </div>
           </Grid>
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div> Night</div>
+            <div style={{ marginBottom: "10px" }}> Night</div>
             <div
               style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
             >
@@ -106,7 +127,14 @@ const Today = ({ city }) => {
               height="auto"
               alt="ico-img"
             />
-            <div>{day_data.night.clouds}%</div>
+            <div>
+              {day_data.night.clouds}%{" "}
+              <img
+                height="15px"
+                src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
+                // style={{ transform: "rotateX(45)" }}
+              />
+            </div>
           </Grid>
 
           <Grid item xs={12} marginTop="25px" marginBottom="25px">
