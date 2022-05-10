@@ -81,6 +81,21 @@ const MinuteDetails = ({ item }) => {
   );
 };
 
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "July",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
 const Accordian = ({ item }) => {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
@@ -88,6 +103,7 @@ const Accordian = ({ item }) => {
   };
 
   var t = update_time(item.dt);
+  const date = new Date(item.dt * 1000);
 
   return (
     <Grid
@@ -95,8 +111,6 @@ const Accordian = ({ item }) => {
       alignItems="center"
       borderBottom="1px solid #d4d4d5"
       justifyContent="space-evenly"
-      // alignItems= "center"
-      // fontSize="larger"
     >
       <Grid item xs={1} textAlign="end">
         {t}
@@ -173,8 +187,19 @@ const Accordian = ({ item }) => {
       </Grid>
 
       {t === "23:30" ? (
-        <Grid item xs={12}>
-          New Day
+        <Grid
+          item
+          xs={12}
+          padding="15px"
+          fontSize="larger"
+          fontWeight="bold"
+          borderTop="1px solid #d4d4d5"
+        >
+          {months[date.getMonth()] +
+            " " +
+            (date.getDate() + 1) +
+            ", " +
+            date.getFullYear()}
         </Grid>
       ) : (
         ""
@@ -184,95 +209,11 @@ const Accordian = ({ item }) => {
 };
 
 const DisplayData = ({ data }) => {
-  // const [open, setOpen] = useState(false);
-  // const handleClick = () => {
-  //   setOpen(!open);
-  // };
   var i = -1;
   return (
     <Grid container>
       {data.map((item) => {
         return <Accordian key={++i} item={item} />;
-
-        // let open = false;
-        // const handleClick = () => {
-        // open = !open;
-        // console.log("inside handle CLick", open);
-        // };
-        // var t = update_time(item.dt);
-        // return (
-        //   <Grid
-        //     container
-        //     key={i++}
-        //     alignItems="center"
-        //     borderBottom="1px solid #d4d4d5"
-        //   >
-        //     <Grid item xs={1} textAlign="end">
-        //       {t}
-        //     </Grid>
-        //     <Grid item xs={2} fontSize="23px" fontWeight="bold">
-        //       {parseInt(item.temp - 273.15)}&#176;
-        //     </Grid>
-        //     <Grid item xs={2} display="flex" alignItems="center">
-        //       <img
-        //         src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-        //         height="50px"
-        //         alt="ico-img"
-        //       />
-        //       {/* {item.weather[0].icon} */}
-        //       <span>{item.weather[0].main}</span>
-        //     </Grid>
-
-        //     <Grid item xs={2}></Grid>
-
-        //     <Grid item xs={2}>
-        //       {item.clouds}%
-        //       <img
-        //         height="15px"
-        //         src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-        //         // style={{ transform: "rotateX(45)" }}
-        //       />
-        //     </Grid>
-        //     <Grid item xs={2}>
-        //       {item.wind_speed} km/h
-        //       {item.wind_speed > 0 && item.wind_speed < 90
-        //         ? " NE"
-        //         : item.wind_speed === 90
-        //         ? " E"
-        //         : item.wind_speed > 90 && item.wind_speed < 180
-        //         ? " SE"
-        //         : item.wind_speed === 180
-        //         ? " S"
-        //         : item.wind_speed > 180 && item.wind_speed < 270
-        //         ? "SW"
-        //         : item.wind_speed === 270
-        //         ? "W"
-        //         : item.wind_speed > 270 && item.wind_speed < 359
-        //         ? "NW"
-        //         : item.wind_speed === 0
-        //         ? "N"
-        //         : ""}
-        //     </Grid>
-        //     <Grid item xs={1}>
-        //       <Button onClick={handleClick}>Click</Button>
-        //     </Grid>
-
-        //     <Grid item xs={12}>
-        //       {console.log("inside the grid")}
-        //       <Collapse in={open} timeout="auto" unmountOnExit>
-        //         {console.log("inside collapse component")}
-        //       </Collapse>
-        //     </Grid>
-
-        //     {t === "23:30" ? (
-        //       <Grid item xs={12}>
-        //         New Day
-        //       </Grid>
-        //     ) : (
-        //       ""
-        //     )}
-        //   </Grid>
-        // );
       })}
     </Grid>
   );
@@ -288,7 +229,7 @@ export const HourlyCard = ({ city }) => {
         justifyContent={"center"}
         alignItems={"center"}
         padding={"5px"}
-        // marginTop="10px"
+        marginBottom="10px"
       >
         <Grid
           item

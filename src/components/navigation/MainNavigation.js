@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import DailyCard from "../cards/DailyCard";
+import { DailyCard } from "../cards/DailyCard";
 import { HourlyCard } from "../cards/HourlyCard";
 import Home from "../overview-front/Home";
 import {
