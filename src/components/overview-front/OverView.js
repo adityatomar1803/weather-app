@@ -5,7 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import { ButtonGroup } from "@mui/material";
 import { Grid } from "@mui/material";
 // import logo from "../../data/logo.png";
-import srf from "../../data/3d_icons/sun/4.png";
+// import srf from "../../data/3d_icons/sun/4.png";
 // import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 import CardContent from "@mui/material/CardContent";
@@ -60,17 +60,50 @@ const OverView = ({ city }) => {
   } else {
     console.log("OverView:: The final res is", final_res);
     console.log("c, k, f are :", c_variant, k_variant, f_variant);
+    var desc = final_res.current.weather[0].icon;
+    console.log(desc);
+    // console.log(desc === "01d");
     // console.log("OverView:: The final res is", final_res);
     // ()=>temperatureGetter();
     return (
       <Grid
         container
-        className="card main-card"
+        className={
+          desc === "01d"
+            ? "card card-1d"
+            : desc === "01n"
+            ? "card card-1n"
+            : desc === "02d" || "03d"
+            ? "card card-2d-3d"
+            : desc === "02n" || "03n"
+            ? "card card-2n-3n"
+            : desc === "04d"
+            ? "card card-4d"
+            : desc === "04n"
+            ? "card card-4n"
+            : desc === "09d" || "10d"
+            ? "card card-10d-09d"
+            : desc === "09n" || "10n"
+            ? "card card-10n-09n"
+            : desc === "11d"
+            ? "card card-11d"
+            : desc === "11n"
+            ? "card card-11n"
+            : desc === "13d"
+            ? "card card-13d"
+            : desc === "13n"
+            ? "card card-13n"
+            : desc === "50d"
+            ? "card card-50d"
+            : "card card-50n"
+        }
         // style={{ border: "2px solid black" }}
+        // backgroundImage="url('../../data/clouds-in-the-sky.jpg')"
+        // backgroundRepeat="no-repeat"
         sx={{
           color: "white",
-          // backgroundColor: "white",
-          // backgroundImage: `url('https://icons8.com/photos/photo/nature--621d1baf92a9c1000164c644')`,
+          // backgroundImage: `url('../../data/clouds-in-the-sky.jpg')`,
+          // backgroundRepeat: "no-repeat",
         }}
       >
         <Grid item xs={12}>
@@ -98,8 +131,8 @@ const OverView = ({ city }) => {
           {/* /////// Image Grid ///////// */}
           <Grid item xs={12} md={4}>
             <img
-              // src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
-              src={srf}
+              src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
+              // src={srf}
               height="150px"
               // width="30%"
             />

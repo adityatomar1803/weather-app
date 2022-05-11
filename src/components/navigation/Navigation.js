@@ -4,9 +4,18 @@ import { Autocomplete } from "@mui/material";
 import logo from "../../data/logo.png";
 import { TextField } from "@mui/material";
 import { useWeatherData } from "../../context/weather.context";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = ({ data_city, finalCity, city }) => {
   const { isLoading, final_res } = useWeatherData();
+  // const [refresh, setRefresh] = useState(false);
+  console.log("re-entered");
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  const navigate = useNavigate();
 
   const [value, setValue] = useState("");
 
@@ -32,7 +41,14 @@ const Navigation = ({ data_city, finalCity, city }) => {
         alignItems={"center"}
       >
         <Grid item xs={6} md={1}>
-          <div>
+          <div
+            onClick={() => {
+              return navigate("/");
+            }}
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <img className="logo" src={logo} alt="logo" />
           </div>
         </Grid>
@@ -52,7 +68,7 @@ const Navigation = ({ data_city, finalCity, city }) => {
           {/* city data */}
         </Grid>
         <Grid item xs={6} md={1}>
-          <div className="nav-item">
+          <div className="nav-item" onClick={refreshPage}>
             <span className="material-icons">refresh</span>
             {/* <span></span> */}
             Refresh

@@ -2,6 +2,7 @@
 import "./App.css";
 import MainComponent from "./components/MainComponent";
 import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
+import { BrowserRouter } from "react-router-dom";
 
 // import DonutChart from "react-donut-chart";
 // import { Pie } from "react-chartjs-2/dist/index";
@@ -10,9 +11,11 @@ Chart.register(Tooltip, Title, ArcElement, Legend);
 
 function App() {
   return (
-    <div className="App">
-      <MainComponent />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <MainComponent />
+      </div>
+    </BrowserRouter>
   );
 }
 

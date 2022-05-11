@@ -40,7 +40,7 @@ const MinuteDetails = ({ item }) => {
             >
               <img src="https://img.icons8.com/fluency/48/000000/sunrise.png" />
             </span>
-            <span>{update_time(item.sunrise)}</span>
+            <span> Sunrise: {update_time(item.sunrise)}</span>
             <span
               style={{
                 margin: "5px",
@@ -48,7 +48,7 @@ const MinuteDetails = ({ item }) => {
             >
               <img src="https://img.icons8.com/fluency/48/000000/sunset.png" />
             </span>
-            <span>{update_time(item.sunset)}</span>
+            <span>Sunset: {update_time(item.sunset)}</span>
             {/* <span>Feels Like</span> */}
           </Grid>
 
@@ -110,7 +110,7 @@ const MinuteDetails = ({ item }) => {
             >
               <img src="https://img.icons8.com/fluency/48/000000/moonrise.png" />
             </span>
-            <span>{update_time(item.moonrise)}</span>
+            <span>Moonrise: {update_time(item.moonrise)}</span>
             <span
               style={{
                 margin: "5px",
@@ -118,7 +118,7 @@ const MinuteDetails = ({ item }) => {
             >
               <img src="https://img.icons8.com/fluency/48/000000/moonset.png" />
             </span>
-            <span>{update_time(item.moonset)}</span>
+            <span>Moonset: {update_time(item.moonset)}</span>
             {/* <span>Feels Like</span> */}
           </Grid>
 

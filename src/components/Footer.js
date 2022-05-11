@@ -8,8 +8,10 @@ import { Button } from "@mui/material";
 import FeedbackIcon from "@mui/icons-material/Feedback";
 import logo from "../data/logo.png";
 import CopyrightIcon from "@mui/icons-material/Copyright";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     // <div>sgfd</div>
     <Grid container backgroundColor={"white"}>
@@ -25,16 +27,39 @@ const Footer = () => {
           Connect With Us
         </div>
         <span>
-          <FacebookRoundedIcon
-            color="primary"
-            fontSize="large"
-            className="connect-icons"
-          />
+          <a
+            target="_blank"
+            href="https://www.facebook.com/aditya.tomar.777158/"
+          >
+            <FacebookRoundedIcon
+              color="primary"
+              fontSize="large"
+              className="connect-icons"
+            />
+          </a>
 
-          <Instagram color="error" fontSize="large" className="connect-icons" />
+          <a target="_blank" href="https://www.instagram.com/tomar_aditya_/">
+            <Instagram
+              color="error"
+              fontSize="large"
+              className="connect-icons"
+            />
+          </a>
 
-          <Twitter color="primary" fontSize="large" className="connect-icons" />
-          <YouTube color="error" fontSize="large" className="connect-icons" />
+          <a target="_blank" href="https://twitter.com/tomar_aditya_12">
+            <Twitter
+              color="primary"
+              fontSize="large"
+              className="connect-icons"
+            />
+          </a>
+
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCb6i14LUP6_wPrBNuhjHkVA"
+          >
+            <YouTube color="error" fontSize="large" className="connect-icons" />
+          </a>
         </span>
       </Grid>
 
@@ -50,25 +75,36 @@ const Footer = () => {
         xs={12}
         md={4}
         className="footer-logo"
-        style={{ flexDirection: "column" }}
+        style={{ flexDirection: "column", cursor: "pointer" }}
+        onClick={() => {
+          return navigate("/");
+        }}
       >
         <img className="logo" src={logo} alt="logo" />
         <span style={{ marginTop: "10px" }}>Weather Forecast Foremost</span>
       </Grid>
 
       <Grid item xs={12}>
-        <Button
-          size="medium"
-          color="secondary"
-          style={{ borderRight: "4px solid", paddingRight: "20px" }}
-          //   className="right-border"
-        >
-          Weather API
-        </Button>
+        <a target="_blank" href="https://openweathermap.org/">
+          <Button
+            size="medium"
+            color="secondary"
+            style={{ borderRight: "4px solid", paddingRight: "20px" }}
+            //   className="right-border"
+          >
+            Weather API
+          </Button>
+        </a>
 
-        <Button size="medium" color="secondary" style={{ paddingLeft: "20px" }}>
-          News Room
-        </Button>
+        <a target="_blank" href="https://weather.com/en-IN/india/news">
+          <Button
+            size="medium"
+            color="secondary"
+            style={{ paddingLeft: "20px" }}
+          >
+            News Room
+          </Button>
+        </a>
       </Grid>
 
       <Grid item xs={12} marginTop="20px">

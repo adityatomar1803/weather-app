@@ -4,6 +4,7 @@ import { useWeatherData } from "../../context/weather.context";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
+import { useNavigate } from "react-router-dom";
 
 import { Doughnut } from "react-chartjs-2";
 
@@ -11,6 +12,7 @@ Chart.register(Tooltip, Title, ArcElement, Legend);
 
 const AirQuality = () => {
   const { isLoading, pollution_data } = useWeatherData();
+  const navigate = useNavigate();
 
   var color_ = "";
   var pm2_5 = "";
@@ -138,6 +140,9 @@ const AirQuality = () => {
               fontSize: "small",
               padding: "8px",
               // marginRight: "auto",
+            }}
+            onClick={() => {
+              return navigate("/air");
             }}
           >
             See details

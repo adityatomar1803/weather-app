@@ -10,6 +10,21 @@
   font-size: 1.1rem;
 }
 
+.Map {
+  /* height: 50vh; */
+  /* width: 50vh; */
+  border: 1px solid black;
+
+  /* position: relative; */
+  height: 70vh;
+  width: 110vh;
+  /* outline: currentcolor none medium; */
+  /* padding-left: 434px; */
+  margin: auto;
+  /* position: absolute;
+  z-index: 1; */
+}
+
 /*
 .App-logo {
   height: 40vmin;
@@ -121,9 +136,70 @@
   border-radius: 10px;
 }
 
-.main-card {
-  background-image: url("data/clouds-in-the-sky.jpg");
+.card-1d {
+  background-image: url("data/background-photo/01d.jpg");
   /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-1n {
+  background-image: url("data/background-photo/01n.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-2d-3d {
+  background-image: url("data/background-photo/02d_03d.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-2n-3n {
+  background-image: url("data/background-photo/02n_03n.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-4d {
+  background-image: url("data/background-photo/04d.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-4n {
+  background-image: url("data/background-photo/04n.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-10d-09d {
+  background-image: url("data/background-photo/10d_09d.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+.card-10n-09n {
+  background-image: url("data/background-photo/10n_09n.jpg");
+  /* background-image: url("data/nature.jpg"); */
+  background-repeat: no-repeat;
+}
+
+.card-11d {
+  background-image: url("data/background-photo/11d.jpg");
+  background-repeat: no-repeat;
+}
+.card-13d {
+  background-image: url("data/background-photo/13d.jpg");
+  background-repeat: no-repeat;
+}
+.card-50d {
+  background-image: url("data/background-photo/50d.jpg");
+  background-repeat: no-repeat;
+}
+
+.card-11n {
+  background-image: url("data/background-photo/11n.jpg");
+  background-repeat: no-repeat;
+}
+.card-13n {
+  background-image: url("data/background-photo/13n.jpg");
+  background-repeat: no-repeat;
+}
+.card-50n {
+  background-image: url("data/background-photo/50n.jpg");
   background-repeat: no-repeat;
 }
 
@@ -142,4 +218,11 @@
   justify-content: center;
   align-items: center;
   /* flex-direction: column; */
+}
+
+.air-grid-item {
+  display: "flex";
+  justify-content: "space-evenly";
+  margin: "10px 0px 10px 0px";
+  font-size: "large";
 }
