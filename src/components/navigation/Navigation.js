@@ -5,6 +5,7 @@ import logo from "../../data/logo.png";
 import { TextField } from "@mui/material";
 import { useWeatherData } from "../../context/weather.context";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material";
 
 const Navigation = ({ data_city, finalCity, city }) => {
   const { isLoading, final_res } = useWeatherData();
@@ -14,6 +15,13 @@ const Navigation = ({ data_city, finalCity, city }) => {
   function refreshPage() {
     window.location.reload(false);
   }
+
+  // const StyledAutocomplete = styled(Autocomplete)({
+  //   "& .MuiAutocomplete-inputRoot": {
+  //     color: "purple",
+  //     // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
+  //   },
+  // });
 
   const navigate = useNavigate();
 
@@ -84,6 +92,7 @@ const Navigation = ({ data_city, finalCity, city }) => {
           {/* <div className="material-icons">search</div> */}
           <div>
             <Autocomplete
+              // sx={{ marginTop: "5px" }}
               className="auto-complete"
               id="controlled-demo"
               options={data_city}
@@ -98,7 +107,13 @@ const Navigation = ({ data_city, finalCity, city }) => {
                 setInputValue(newInputValue);
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Enter city" variant="standard" />
+                <TextField
+                  {...params}
+                  label="Enter city"
+                  variant="standard"
+
+                  // marginTop="10px"
+                />
               )}
             />
           </div>

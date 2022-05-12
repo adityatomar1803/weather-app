@@ -1,7 +1,7 @@
 import React from "react";
 import { useWeatherData } from "../../context/weather.context";
 import { Grid } from "@mui/material";
-import { update_time } from "../../helper/Helper";
+import { update_date, update_time } from "../../helper/Helper";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,8 @@ const Det = ({ data }) => {
   console.log("inside det");
   return data.map((item) => {
     i++;
-    // console.log("inside det map,", item, item.dt);
+    console.log("inside det map,", item, item.dt);
+
     return (
       <Grid
         item
@@ -21,7 +22,7 @@ const Det = ({ data }) => {
       >
         <div>
           <div style={{ fontSize: "larger", marginBottom: "15px" }}>
-            {i === 1 ? "Now" : update_time(item.dt)}
+            {i === 1 ? "Today" : update_date(item)}
           </div>
           <div
             style={{

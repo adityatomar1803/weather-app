@@ -13,6 +13,7 @@ import {
 import Maps from "../Maps/Maps";
 import Stats from "../Statistics/Stats";
 import Air from "../Air";
+import About from "../About";
 
 function CustomLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -86,6 +87,7 @@ const MainNavigation = ({ city }) => {
         <Route exact path="/stats" element={<Stats />} />
         <Route exact path="/maps" element={<Maps />} />
         <Route exact path="/air" element={<Air city={city} />} />
+        <Route exact path="/about" element={<About />} />
       </Routes>
     </div>
   );

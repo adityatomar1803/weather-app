@@ -140,67 +140,81 @@
   background-image: url("data/background-photo/01d.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-1n {
   background-image: url("data/background-photo/01n.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-2d-3d {
   background-image: url("data/background-photo/02d_03d.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-2n-3n {
   background-image: url("data/background-photo/02n_03n.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-4d {
   background-image: url("data/background-photo/04d.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-4n {
   background-image: url("data/background-photo/04n.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-10d-09d {
   background-image: url("data/background-photo/10d_09d.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-10n-09n {
   background-image: url("data/background-photo/10n_09n.jpg");
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-11d {
   background-image: url("data/background-photo/11d.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-13d {
   background-image: url("data/background-photo/13d.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-50d {
   background-image: url("data/background-photo/50d.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-11n {
   background-image: url("data/background-photo/11n.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-13n {
   background-image: url("data/background-photo/13n.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .card-50n {
   background-image: url("data/background-photo/50n.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .tempButton:active {

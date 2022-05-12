@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { appid } from "../helper/Keys";
 // import { createContext } from "use-context-selector";
 // import { useContextSelector } from "use-context-selector";
 // import { get_Lat_n_Lon } from "../helper/Helper";
@@ -34,7 +35,7 @@ export const WeatherProvider = ({ city, children }) => {
         lat = res[0]["lat"];
         lon = res[0]["lon"];
         return fetch(
-          `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=e816dd76c2a342a9f38f34843d0a039d`
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${appid}`
           // `https://api.openweathermap.org/data/2.5/onecall?lat=${res[0]["lat"]}&lon=${res[0]["lon"]}&exclude=minutely&appid=e816dd76c2a342a9f38f34843d0a039d`
         );
       })
@@ -43,7 +44,7 @@ export const WeatherProvider = ({ city, children }) => {
         console.log("weather.context:: second API result in json format", res);
         setFinal(res);
         return fetch(
-          `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=e816dd76c2a342a9f38f34843d0a039d`
+          `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${appid}`
         );
         // setIsLoading(false);
       })

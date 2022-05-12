@@ -5,11 +5,11 @@ import { update_time } from "../../helper/Helper";
 import Collapse from "@mui/material/Collapse";
 import { useState } from "react";
 import { Button } from "@mui/material";
-
-const day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+import { update_date } from "../../helper/Helper";
+// const day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const MinuteDetails = ({ item }) => {
-  const date = new Date(item.dt * 1000);
+  // const date = new Date(item.dt * 1000);
   return (
     <Grid
       container
@@ -18,7 +18,7 @@ const MinuteDetails = ({ item }) => {
       borderRadius="10px"
     >
       <Grid item xs={12} md={6}>
-        <div>{day[date.getDay()] + " " + date.getDate()} | Day</div>
+        <div>{update_date(item)} | Day</div>
 
         <Grid container>
           <Grid
@@ -88,7 +88,7 @@ const MinuteDetails = ({ item }) => {
       </Grid>
 
       <Grid item xs={12} md={6}>
-        <div>{day[date.getDay()] + " " + date.getDate()} | Night</div>
+        <div>{update_date(item)} | Night</div>
 
         <Grid container>
           <Grid
@@ -227,7 +227,7 @@ const Accordian = ({ item }) => {
   };
 
   // var t = update_time(item.dt);
-  const date = new Date(item.dt * 1000);
+  // const date = new Date(item.dt * 1000);
 
   return (
     <Grid
@@ -237,7 +237,7 @@ const Accordian = ({ item }) => {
       justifyContent="space-evenly"
     >
       <Grid item xs={1} textAlign="end">
-        {day[date.getDay()] + " " + date.getDate()}
+        {update_date(item)}
       </Grid>
 
       <Grid item xs={2} fontSize="18px" fontWeight="bold">

@@ -58,3 +58,10 @@ export const update_time = (timestamp) => {
 
   return formattedTime;
 };
+
+const day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+export const update_date = (timestamp) => {
+  const date = new Date(timestamp.dt * 1000);
+  return (day[date.getDay()] + " " + date.getDate())
+};
