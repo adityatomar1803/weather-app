@@ -6,6 +6,8 @@ import { TextField } from "@mui/material";
 import { useWeatherData } from "../../context/weather.context";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material";
+import { Backdrop } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 
 const Navigation = ({ data_city, finalCity, city }) => {
   const { isLoading, final_res } = useWeatherData();
@@ -76,7 +78,12 @@ const Navigation = ({ data_city, finalCity, city }) => {
           {/* city data */}
         </Grid>
         <Grid item xs={6} md={1}>
-          <div className="nav-item" onClick={refreshPage}>
+          <div
+            className="nav-item"
+            onClick={() => {
+              setValue(inputValue);
+            }}
+          >
             <span className="material-icons">refresh</span>
             {/* <span></span> */}
             Refresh
@@ -121,7 +128,14 @@ const Navigation = ({ data_city, finalCity, city }) => {
       </Grid>
     );
   } else {
-    return <div>Loading...</div>;
+    return (
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open
+      >
+        <CircularProgress color="success" />
+      </Backdrop>
+    );
   }
 };
 

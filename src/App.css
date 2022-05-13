@@ -13,11 +13,11 @@
 .Map {
   /* height: 50vh; */
   /* width: 50vh; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
   /* position: relative; */
-  height: 70vh;
-  width: 110vh;
+  height: 80vh;
+  width: 100%;
   /* outline: currentcolor none medium; */
   /* padding-left: 434px; */
   margin: auto;
@@ -236,7 +236,33 @@
 
 .air-grid-item {
   display: "flex";
-  justify-content: "space-evenly";
-  margin: "10px 0px 10px 0px";
-  font-size: "large";
+  justify-content: space-evenly;
+  margin: 10px 0px 10px 0px;
+  font-size: large;
+}
+
+.TempLegend {
+  background-image: url("/src/data/Legend/temp.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.WindLegend {
+  background-image: url("/src/data/Legend/wind.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.PressureLegend {
+  background-image: url("/src/data/Legend/pressure.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.PrecLegend {
+  background-image: url("/src/data/Legend/prec.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.CloudLegend {
+  background-image: url("/src/data/Legend/clouds.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

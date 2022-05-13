@@ -32,7 +32,18 @@ const options = {
       labels: {
         boxHeight: 1,
       },
-      // paddingTop: "10px",
+    },
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+      // ticks: {
+      //   callback: function (val, index) {
+      //     return index % 2 ? "" : this.getLabelForValue(val);
+      //   },
+      // },
     },
   },
 };
@@ -121,14 +132,19 @@ const Stats = () => {
             left: "20%",
             marginTop: "20px",
             marginBottom: "20px",
+            padding: "20px",
           }}
         >
+          <span style={{ marginBotton: "20px", fontSize: "large" }}>
+            Temperature Fluctuations for next 24 hours
+          </span>
           <Line data={data_hourly} options={options} />
         </div>
 
         <div
           style={{
             backgroundColor: "white",
+            padding: "20px",
             position: "relative",
             width: "800px",
             // height: "400px",
@@ -137,6 +153,9 @@ const Stats = () => {
             marginBottom: "20px",
           }}
         >
+          <span style={{ marginBotton: "20px", fontSize: "large" }}>
+            Temperature Fluctuations for next 7 days
+          </span>
           <Line data={data_daily} options={options} />
         </div>
       </div>
