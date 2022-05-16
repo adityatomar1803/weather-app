@@ -10,55 +10,60 @@ import Day from "./Day";
 const Home = ({ city }) => {
   return (
     <Grid container justifyContent={"space-evenly"} alignItems={"center"}>
-      <Grid item sm={12} md={7}>
+      <Grid item xs={10} md={7}>
         <OverView city={city} />
       </Grid>
-      <Grid item sm={12} md={3}>
+      <Grid item xs={10} md={3}>
         <AirQuality />
       </Grid>
 
       <Grid
         item
-        sm={12}
+        xs={10}
+        sm={8}
         md={7}
         backgroundColor="white"
-        marginBottom="10px"
-        marginTop="15px"
-        borderRadius="10px"
+        // marginBottom="0.6rem"
+        marginTop="1.5rem"
+        borderRadius="0.6rem"
       >
         <Today city={city} />
       </Grid>
+
       <Grid
         item
-        sm={12}
+        xs={10}
+        sm={8}
         md={7}
         backgroundColor="white"
-        marginBottom="10px"
-        marginTop="15px"
-        borderRadius="10px"
+        // marginBottom="0.6rem"
+        marginTop="1.5rem"
+        borderRadius="0.6rem"
       >
         <Details city={city} />
       </Grid>
 
       <Grid
         item
-        sm={12}
+        xs={10}
+        sm={8}
         md={7}
         backgroundColor="white"
-        marginBottom="10px"
-        marginTop="15px"
-        borderRadius="10px"
+        // marginBottom="0.6rem"
+        marginTop="1.5rem"
+        borderRadius="0.6rem"
       >
         <Hour />
       </Grid>
       <Grid
         item
-        sm={12}
+        xs={10}
+        sm={8}
         md={7}
         backgroundColor="white"
-        marginBottom="10px"
-        marginTop="15px"
-        borderRadius="10px"
+        marginBottom="0.6rem"
+        marginTop="1.5rem"
+        borderRadius="0.6rem"
       >
         <Day />
       </Grid>

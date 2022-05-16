@@ -17,7 +17,8 @@ const MinuteDetails = ({ item }) => {
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         {/* <div> */}
         <img
-          height="30px"
+          // height="auto"
+          className="HourlyFeelsLikeImage"
           src="https://img.icons8.com/color/48/000000/hot.png"
         />
         {/* </div> */}
@@ -28,7 +29,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          height="30px"
+          // height="30px"
+          className="HourlyWindImage2"
           src="https://img.icons8.com/color/48/000000/wind.png"
         />
         <div>
@@ -38,7 +40,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          height="30px"
+          // height="30px"
+          className="HumidityHourlyImage"
           src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-humidity-weather-justicon-flat-justicon-1.png"
         />
         <div>
@@ -48,7 +51,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          height="30px"
+          // height="30px"
+          className="HourlyUvImage"
           src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-uv-index-weather-justicon-lineal-color-justicon.png"
         />
         <div>
@@ -59,6 +63,7 @@ const MinuteDetails = ({ item }) => {
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
           height="30px"
+          // className="hourlyCloudImage"
           src="https://img.icons8.com/cute-clipart/64/000000/cloud.png"
         />
         <div>
@@ -68,7 +73,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          height="30px"
+          // height="30px"
+          className="HourlyPressureImage"
           src="https://img.icons8.com/color/48/000000/pressure.png"
         />
 
@@ -108,36 +114,43 @@ const Accordian = ({ item }) => {
   return (
     <Grid
       container
+      justifyContent="space-evenly"
       alignItems="center"
       borderBottom="1px solid #d4d4d5"
-      justifyContent="space-evenly"
     >
       <Grid item xs={1} textAlign="end">
         {t}
       </Grid>
-      <Grid item xs={2} fontSize="23px" fontWeight="bold">
+
+      <Grid
+        item
+        xs={1}
+        fontSize="1.2rem"
+        fontWeight="bold"
+        justifyContent={"center"}
+      >
         {parseInt(item.temp - 273.15)}&#176;
       </Grid>
-      <Grid item xs={2} display="flex" alignItems="center">
+
+      <Grid item xs={3} display="flex" alignItems="center">
         <img
+          className="hourlyWeatherImage"
           src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-          height="70px"
           alt="ico-img"
         />
-        {/* {item.weather[0].icon} */}
+
         <span>{item.weather[0].main}</span>
       </Grid>
-
-      <Grid item xs={2}></Grid>
 
       <Grid item xs={2}>
         {item.clouds}%
         <img
-          height="15px"
+          className="hourlyRainImage"
           src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
           // style={{ transform: "rotateX(45)" }}
         />
       </Grid>
+
       <Grid
         item
         xs={2}
@@ -147,41 +160,24 @@ const Accordian = ({ item }) => {
       >
         <img
           src="https://img.icons8.com/color/48/000000/wind.png"
-          height="25px"
-          style={{ marginRight: "10px" }}
+          // height="18px"
+          className="hourlyWindImage"
         />
         {item.wind_speed} km/h
-        {/* {item.wind_speed > 0 && item.wind_speed < 90
-          ? " NE"
-          : item.wind_speed === 90
-          ? " E"
-          : item.wind_speed > 90 && item.wind_speed < 180
-          ? " SE"
-          : item.wind_speed === 180
-          ? " S"
-          : item.wind_speed > 180 && item.wind_speed < 270
-          ? "SW"
-          : item.wind_speed === 270
-          ? "W"
-          : item.wind_speed > 270 && item.wind_speed < 359
-          ? "NW"
-          : item.wind_speed === 0
-          ? "N"
-          : ""} */}
       </Grid>
+
       <Grid item xs={1}>
         <Button onClick={handleClick}>
           <img
-            height="20px"
+            height="15px"
             src="https://img.icons8.com/fluency/48/000000/expand-arrow.png"
+            style={{ marginRight: "2rem" }}
           />
         </Button>
       </Grid>
 
       <Grid item xs={11}>
-        {/* {console.log("inside the grid")} */}
         <Collapse in={open} timeout="auto" unmountOnExit>
-          {/* {console.log("inside collapse component")}dsfdf */}
           <MinuteDetails item={item} />
         </Collapse>
       </Grid>
@@ -205,6 +201,90 @@ const Accordian = ({ item }) => {
         ""
       )}
     </Grid>
+
+    // <Grid
+    //   container
+    //   justifyContent="space-evenly"
+    //   alignItems="center"
+    //   borderBottom="1px solid #d4d4d5"
+    // >
+    //   <Grid item xs={1} textAlign="end">
+    //     {t}
+    //   </Grid>
+    //   <Grid item xs={1} fontSize="1.1rem" fontWeight="bold">
+    //     {parseInt(item.temp - 273.15)}&#176;
+    //   </Grid>
+
+    //   <Grid item xs={2} display="flex" alignItems="center">
+    //     <img
+    //       src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+    //       height="70px"
+    //       alt="ico-img"
+    //     />
+
+    //     <span>{item.weather[0].main}</span>
+    //   </Grid>
+
+    //   <Grid item xs={2}></Grid>
+
+    //   <Grid item xs={2}>
+    //     {item.clouds}%
+    //     <img
+    //       height="15px"
+    //       src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
+    //       // style={{ transform: "rotateX(45)" }}
+    //     />
+    //   </Grid>
+    //   <Grid
+    //     item
+    //     xs={2}
+    //     display="flex"
+    //     alignItems="center"
+    //     justifyContent="center"
+    //   >
+    //     <img
+    //       src="https://img.icons8.com/color/48/000000/wind.png"
+    //       height="25px"
+    //       style={{ marginRight: "0.6rem" }}
+    //     />
+    //     {item.wind_speed} km/h
+    //   </Grid>
+    //   <Grid item xs={1}>
+    //     <Button onClick={handleClick}>
+    //       <img
+    //         height="20px"
+    //         src="https://img.icons8.com/fluency/48/000000/expand-arrow.png"
+    //       />
+    //     </Button>
+    //   </Grid>
+
+    //   <Grid item xs={11}>
+    //     {/* {console.log("inside the grid")} */}
+    //     <Collapse in={open} timeout="auto" unmountOnExit>
+    //       {/* {console.log("inside collapse component")}dsfdf */}
+    //       <MinuteDetails item={item} />
+    //     </Collapse>
+    //   </Grid>
+
+    //   {t === "23:30" ? (
+    //     <Grid
+    //       item
+    //       xs={12}
+    //       padding="15px"
+    //       fontSize="larger"
+    //       fontWeight="bold"
+    //       borderTop="1px solid #d4d4d5"
+    //     >
+    //       {months[date.getMonth()] +
+    //         " " +
+    //         (date.getDate() + 1) +
+    //         ", " +
+    //         date.getFullYear()}
+    //     </Grid>
+    //   ) : (
+    //     ""
+    //   )}
+    // </Grid>
   );
 };
 
@@ -228,33 +308,35 @@ export const HourlyCard = ({ city }) => {
         container
         justifyContent={"center"}
         alignItems={"center"}
-        padding={"5px"}
-        marginBottom="10px"
+        padding={"0.3rem"}
+        marginBottom="0.6rem"
       >
         <Grid
           item
-          xs={12}
-          md={7}
+          xs={11}
+          sm={9}
+          md={8}
+          lg={7}
           backgroundColor={"white"}
-          marginTop="10px"
-          borderRadius="10px"
+          marginTop="0.6rem"
+          borderRadius="0.6rem"
         >
-          <div style={{ marginTop: "20px" }}>
-            <span style={{ fontSize: "25px", fontWeight: "bold" }}>
+          <div style={{ marginTop: "1.3rem" }}>
+            <span style={{ fontSize: "1.6rem", fontWeight: "bold" }}>
               Hourly Weather -{" "}
             </span>
-            <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+            <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>
               {city}{" "}
             </span>
-            <div style={{ fontSize: "20px", marginTop: "10px" }}>
+            <div style={{ fontSize: "1.3rem", marginTop: "10px" }}>
               {" "}
               As of {update_time(final_res.current.dt)}
             </div>
           </div>
           <div
             style={{
-              marginTop: "25px",
-              paddingTop: "15px",
+              marginTop: "1.6rem",
+              paddingTop: "1rem",
               borderTop: "1px solid aliceblue",
             }}
           >

@@ -19,6 +19,7 @@ const Det = ({ data }) => {
         style={{
           boxShadow: "1px 0px 0px 0px rgb(179, 179, 179)",
         }}
+        marginBottom="5rem"
       >
         <div>
           <div style={{ fontSize: "larger", marginBottom: "15px" }}>
@@ -26,16 +27,16 @@ const Det = ({ data }) => {
           </div>
           <div
             style={{
-              fontSize: "30px",
+              fontSize: "2rem",
               color: "blue",
               fontWeight: "bold",
-              marginBottom: "10px",
+              marginBottom: "0.6rem",
             }}
           >
-            <div style={{ fontSize: "25px" }}>
+            <div style={{ fontSize: "1.6rem" }}>
               {parseInt(item.temp.max - 273.15)}&#176;
             </div>
-            <div style={{ fontSize: "25px" }}>
+            <div style={{ fontSize: "1.6rem" }}>
               {parseInt(item.temp.min - 273.15)}&#176;
             </div>
           </div>
@@ -43,7 +44,7 @@ const Det = ({ data }) => {
             src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
             // height="50px"
           />
-          <div style={{ fontSize: "larger", marginTop: "10px" }}>
+          <div style={{ fontSize: "larger", marginTop: "0.6rem" }}>
             {item.clouds}%
             <img
               height="15px"
@@ -63,15 +64,15 @@ const Day = () => {
 
   if (!isLoading) {
     return (
-      <Grid container marginBottom="20px">
+      <Grid container marginBottom="1.3rem">
         <Grid
           item
           xs={12}
           style={{
-            fontSize: "25px",
+            fontSize: "1.6rem",
             fontWeight: "bold",
-            margin: "20px",
-            marginBottom: "20px",
+            margin: "1.3rem",
+            marginBottom: "1.3rem",
           }}
         >
           Daily Forecast
@@ -84,13 +85,13 @@ const Day = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} marginTop="35px" marginBottom="20px">
+        <Grid item xs={12} marginTop="-2rem" marginBottom="1.3rem">
           <Button
             variant="contained"
             sx={{
-              borderRadius: "10px",
+              borderRadius: "0.6rem",
               fontSize: "small",
-              padding: "8px",
+              padding: "0.5rem",
               // marginRight: "auto",
             }}
             onClick={() => {

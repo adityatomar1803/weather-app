@@ -11,6 +11,12 @@ import { Doughnut } from "react-chartjs-2";
 Chart.register(Tooltip, Title, ArcElement, Legend);
 
 const AirQuality = () => {
+  const options = {
+    cutout: "69%",
+    radius: "100%",
+
+    plugins: { legend: { display: false } },
+  };
   const { isLoading, pollution_data } = useWeatherData();
   const navigate = useNavigate();
 
@@ -49,7 +55,7 @@ const AirQuality = () => {
     }
 
     data = {
-      labels: ["pm2.5 "],
+      labels: [""],
       datasets: [
         {
           label: "My First Dataset",
@@ -71,22 +77,17 @@ const AirQuality = () => {
     return (
       <Grid
         container
-        // style={{
-        //   width: "21%",
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   alignItems: "center",
-        // }}
         backgroundColor="white"
         className="card"
+        marginTop="1.5rem"
       >
         <Grid item xs={12}>
           <Typography
             variant="h5"
             component="div"
             textAlign={"center"}
-            marginBottom={"15px"}
-            marginTop="20px"
+            marginBottom={"1rem"}
+            marginTop="1.3rem"
           >
             Air Quality Index
           </Typography>
@@ -94,49 +95,59 @@ const AirQuality = () => {
 
         <Grid
           item
-          xs={3}
-          md={6}
+          xs={6}
+          // md={6}
           style={{
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          {/* <div> */}
           <div style={{ width: "35%" }}>
             <Doughnut
               data={data}
-              options={{
-                cutout: "69%",
-                radius: "100%",
+              options={
+                window.screen.width <= 900
+                  ? {
+                      cutout: "69%",
+                      radius: "40%",
 
-                plugins: { legend: { display: false } },
-              }}
+                      plugins: { legend: { display: false } },
+                    }
+                  : {
+                      cutout: "69%",
+                      radius: "110%",
+
+                      plugins: { legend: { display: false } },
+                    }
+              }
             />
           </div>
+          <div style={{ marginLeft: "1rem" }}> PM 2.5</div>
         </Grid>
 
         <Grid
           item
-          xs={12}
-          md={6}
+          // xs={12}
+          xs={6}
           textAlign={"center"}
           display="flex"
           justifyContent="center"
           alignItems="center"
-          fontSize={"20px"}
+          fontSize={"1.3rem"}
         >
           {comment}
         </Grid>
 
-        <Grid item xs={12} margin="15px" marginTop="20px">
+        <Grid item xs={12} margin="1rem" marginTop="1.3rem">
           {advice}
         </Grid>
 
-        <Grid item xs={12} marginTop="10px" marginBottom="20px">
+        <Grid item xs={12} marginTop="0.6rem" marginBottom="1.3rem">
           <Button
             variant="contained"
             sx={{
-              borderRadius: "10px",
+              borderRadius: "0.6rem",
               fontSize: "small",
               padding: "8px",
               // marginRight: "auto",

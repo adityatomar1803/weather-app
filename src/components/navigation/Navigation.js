@@ -1,29 +1,33 @@
 import React, { useState } from "react";
-import { createFilterOptions, Grid } from "@mui/material";
+import { createFilterOptions, Grid, Button } from "@mui/material";
 import { Autocomplete } from "@mui/material";
 import logo from "../../data/logo.png";
 import { TextField } from "@mui/material";
 import { useWeatherData } from "../../context/weather.context";
+import { CustomLink } from "./MainNavigation";
+
 import { useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material";
 import { Backdrop } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 
+import { createTheme } from "@mui/material/styles";
+import grey from "@mui/material/colors/grey";
+
+const theme = createTheme({
+  palette: {
+    light: "#FFFFFF",
+  },
+});
+
 const Navigation = ({ data_city, finalCity, city }) => {
   const { isLoading, final_res } = useWeatherData();
+
+  const [toggle, setToggle] = useState(false);
+  console.log("toggle is ", toggle);
   // const [refresh, setRefresh] = useState(false);
   console.log("re-entered");
-
-  function refreshPage() {
-    window.location.reload(false);
-  }
-
-  // const StyledAutocomplete = styled(Autocomplete)({
-  //   "& .MuiAutocomplete-inputRoot": {
-  //     color: "purple",
-  //     // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
-  //   },
-  // });
 
   const navigate = useNavigate();
 
@@ -47,10 +51,15 @@ const Navigation = ({ data_city, finalCity, city }) => {
         container
         spacing={2}
         justifyContent="space-evenly"
-        backgroundColor="#326A84"
+        // backgroundColor="#326A84"
+        // color="black"
+        // backgroundColor="white"
+        className="TopNavbar"
         alignItems={"center"}
+        marginTop="-1rem"
+        marginLeft="-1rem"
       >
-        <Grid item xs={6} md={1}>
+        <Grid item xs={2} sm={2} md={1}>
           <div
             onClick={() => {
               return navigate("/");
@@ -62,7 +71,7 @@ const Navigation = ({ data_city, finalCity, city }) => {
             <img className="logo" src={logo} alt="logo" />
           </div>
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={4} sm={3} md={3}>
           <div className="city-data">
             <span>{city}</span>
             <span style={{ marginLeft: "10px" }}>
@@ -70,6 +79,7 @@ const Navigation = ({ data_city, finalCity, city }) => {
             </span>
             &#8451;
             <img
+              className="jus"
               src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
               height="50px"
               alt="ico-img"
@@ -77,7 +87,7 @@ const Navigation = ({ data_city, finalCity, city }) => {
           </div>
           {/* city data */}
         </Grid>
-        <Grid item xs={6} md={1}>
+        <Grid item xs={6} sm={3} md={1} className="Refresh">
           <div
             className="nav-item"
             onClick={() => {
@@ -89,13 +99,13 @@ const Navigation = ({ data_city, finalCity, city }) => {
             Refresh
           </div>
         </Grid>
-        <Grid item xs={6} md={1}>
+        <Grid item xs={4} sm={3} md={1} className="Theme">
           <div className="nav-item">
             <span className="material-icons">dark_mode</span> Theme
           </div>
         </Grid>
 
-        <Grid item xs={12} md={3} paddingBottom="17px">
+        <Grid item xs={4} sm={3}>
           {/* <div className="material-icons">search</div> */}
           <div>
             <Autocomplete
@@ -125,6 +135,79 @@ const Navigation = ({ data_city, finalCity, city }) => {
             />
           </div>
         </Grid>
+
+        <Grid item xs={2} className="IconThreeLines">
+          <div onClick={() => setToggle(!toggle)}>
+            <span className="material-icons">menu</span>
+          </div>
+        </Grid>
+
+        {toggle && (
+          <Grid
+            className="toggleStyle"
+            container
+            justifyContent={"center"}
+            alignItems={"center"}
+            padding={"0.2rem"}
+            paddingTop={"0.5rem"}
+            backgroundColor={"#0E2333"}
+          >
+            <Grid item xs={12}>
+              <CustomLink
+                to="/"
+                className="Link"
+                onClick={() => setToggle(!toggle)}
+              >
+                Today
+              </CustomLink>
+            </Grid>
+            <Grid item xs={12}>
+              <CustomLink
+                to="/hourly"
+                className="Link"
+                onClick={() => setToggle(!toggle)}
+              >
+                Hourly
+              </CustomLink>
+            </Grid>
+            <Grid item xs={12}>
+              <CustomLink
+                to="/weekly"
+                className="Link"
+                onClick={() => setToggle(!toggle)}
+              >
+                Weekly
+              </CustomLink>
+            </Grid>
+            <Grid item xs={12}>
+              <CustomLink
+                to="/stats"
+                className="Link"
+                onClick={() => setToggle(!toggle)}
+              >
+                Statistics
+              </CustomLink>
+            </Grid>
+            <Grid item xs={12}>
+              <CustomLink
+                to="/maps"
+                className="Link"
+                onClick={() => setToggle(!toggle)}
+              >
+                Maps
+              </CustomLink>
+            </Grid>
+            <Grid item xs={12}>
+              <CustomLink
+                to="/air"
+                className="Link"
+                onClick={() => setToggle(!toggle)}
+              >
+                Air Quality
+              </CustomLink>
+            </Grid>
+          </Grid>
+        )}
       </Grid>
     );
   } else {

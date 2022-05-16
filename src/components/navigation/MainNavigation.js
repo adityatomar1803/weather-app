@@ -16,7 +16,7 @@ import Air from "../Air";
 import About from "../About";
 import { useWeatherData } from "../../context/weather.context";
 
-function CustomLink({ children, to, ...props }) {
+export function CustomLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
@@ -26,7 +26,6 @@ function CustomLink({ children, to, ...props }) {
         style={{
           display: "block",
           borderBottom: match ? "2px solid white" : "none",
-          paddingBottom: "10px",
         }}
         to={to}
         {...props}
@@ -46,44 +45,48 @@ const MainNavigation = ({ city }) => {
   if (!isLoading) {
     return (
       <div>
-        <Grid
-          container
-          justifyContent={"center"}
-          alignItems={"center"}
-          padding={"5px"}
-          backgroundColor={"#0E2333"}
-        >
-          <Grid item sm={2}>
-            <CustomLink to="/" className="Link">
-              Today
-            </CustomLink>
+        <div className="MainNavigation">
+          <Grid
+            container
+            justifyContent={"center"}
+            alignItems={"center"}
+            padding={"0.2rem"}
+            paddingTop={"0.5rem"}
+            backgroundColor={"#0E2333"}
+          >
+            <Grid item xs={4} sm={3} md={2}>
+              <CustomLink to="/" className="Link">
+                Today
+              </CustomLink>
+            </Grid>
+            <Grid item xs={4} sm={3} md={2}>
+              <CustomLink to="/hourly" className="Link">
+                Hourly
+              </CustomLink>
+            </Grid>
+            <Grid item xs={4} sm={3} md={2}>
+              <CustomLink to="/weekly" className="Link">
+                Weekly
+              </CustomLink>
+            </Grid>
+            <Grid item xs={4} sm={3} md={2}>
+              <CustomLink to="/stats" className="Link">
+                Statistics
+              </CustomLink>
+            </Grid>
+            <Grid item xs={4} sm={3} md={2}>
+              <CustomLink to="/maps" className="Link">
+                Maps
+              </CustomLink>
+            </Grid>
+            <Grid item xs={4} sm={3} md={2}>
+              <CustomLink to="/air" className="Link">
+                Air Quality
+              </CustomLink>
+            </Grid>
           </Grid>
-          <Grid item sm={2}>
-            <CustomLink to="/hourly" className="Link">
-              Hourly
-            </CustomLink>
-          </Grid>
-          <Grid item sm={2}>
-            <CustomLink to="/weekly" className="Link">
-              Weekly
-            </CustomLink>
-          </Grid>
-          <Grid item sm={2}>
-            <CustomLink to="/stats" className="Link">
-              Statistics
-            </CustomLink>
-          </Grid>
-          <Grid item sm={2} className="Link">
-            <CustomLink to="/maps" className="Link">
-              Maps
-            </CustomLink>
-          </Grid>
-          <Grid item sm={2} className="Link">
-            <CustomLink to="/air" className="Link">
-              Air Quality
-            </CustomLink>
-          </Grid>
-        </Grid>
+        </div>
+
         <Routes>
           <Route exact path="/" element={<Home city={city} />} />
           <Route exact path="/hourly" element={<HourlyCard city={city} />} />

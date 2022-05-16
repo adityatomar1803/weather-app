@@ -42,14 +42,19 @@ const Footer = () => {
   if (!isLoading) {
     return (
       // <div>sgfd</div>
-      <Grid container backgroundColor={"white"}>
-        <Grid item sm={12} md={4} style={{ padding: "10px" }}>
+      <Grid
+        container
+        backgroundColor={"white"}
+        justifyContent={"center"}
+        alignItems="center"
+      >
+        <Grid item sm={12} md={4} style={{ padding: "0.6rem" }}>
           <div
             style={{
-              marginBottom: "10px",
+              marginBottom: "0.6rem",
               fontSize: "larger",
               fontWeight: "bold",
-              marginTop: "30px",
+              marginTop: "2rem",
             }}
           >
             Connect With Us
@@ -113,15 +118,15 @@ const Footer = () => {
           }}
         >
           <img className="logo" src={logo} alt="logo" />
-          <span style={{ marginTop: "10px" }}>Weather Forecast Foremost</span>
+          <span>Weather Forecast Foremost</span>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} marginTop="1.5rem">
           <a target="_blank" href="https://openweathermap.org/">
             <Button
               size="medium"
               color="secondary"
-              style={{ borderRight: "4px solid", paddingRight: "20px" }}
+              style={{ borderRight: "4px solid", paddingRight: "1.3rem" }}
               //   className="right-border"
             >
               Weather API
@@ -132,19 +137,19 @@ const Footer = () => {
             <Button
               size="medium"
               color="secondary"
-              style={{ paddingLeft: "20px" }}
+              style={{ paddingLeft: "1.3rem" }}
             >
               News Room
             </Button>
           </a>
         </Grid>
 
-        <Grid item xs={12} marginTop="20px">
+        <Grid item xs={12} marginTop="1.3rem">
           <Button
             size="medium"
             color="secondary"
             //   className="right-border"
-            style={{ borderRight: "4px solid", paddingRight: "20px" }}
+            style={{ borderRight: "4px solid", paddingRight: "1.3rem" }}
             onClick={() => {
               return navigate("/about");
             }}
@@ -158,8 +163,8 @@ const Footer = () => {
             //   className="right-border"
             style={{
               borderRight: "4px solid",
-              paddingRight: "20px",
-              paddingLeft: "20px",
+              paddingRight: "1.3rem",
+              paddingLeft: "1.3rem",
             }}
             onClick={handleTerms}
           >
@@ -172,8 +177,8 @@ const Footer = () => {
             //   className="right-border"
             style={{
               borderRight: "4px solid",
-              paddingRight: "20px",
-              paddingLeft: "20px",
+              paddingRight: "1.3rem",
+              paddingLeft: "1.3rem",
             }}
             onClick={handlePrivacy}
           >
@@ -183,13 +188,13 @@ const Footer = () => {
           <Button
             size="medium"
             color="secondary"
-            style={{ paddingLeft: "20px" }}
+            style={{ paddingLeft: "1.3rem" }}
           >
             Data Vendors
           </Button>
         </Grid>
 
-        <Grid item xs={12} marginTop="40px" color="darksategray">
+        <Grid item xs={12} marginTop="2.6rem" color="darksategray">
           We recognise our responsibility to use data and technology for good.
           Take control of your data.
         </Grid>
@@ -197,8 +202,8 @@ const Footer = () => {
         <Grid
           item
           xs={12}
-          marginTop="10px"
-          marginBottom="30px"
+          marginTop="0.6rem"
+          marginBottom="2rem"
           style={{
             display: "flex",
             flexDirection: "row",

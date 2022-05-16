@@ -48,20 +48,23 @@ const Today = ({ city }) => {
     };
     return (
       <div>
-        <div style={{ fontSize: "25px", fontWeight: "bold", padding: "20px" }}>
+        <div
+          style={{ fontSize: "1.6rem", fontWeight: "bold", padding: "1.3rem" }}
+        >
           Today's forecast for {city}
         </div>
         <Grid container fontSize="larger">
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div style={{ marginBottom: "10px" }}> Morning</div>
+            <div style={{ marginBottom: "0.6rem" }}> Morning</div>
             <div
-              style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
+              style={{ fontSize: "2rem", color: "blue", fontWeight: "bold" }}
             >
               {parseInt(day_data.morning.temp - 273.15)}&#176;
             </div>
             <img
               src={`http://openweathermap.org/img/wn/${day_data.morning.icon}@2x.png`}
-              height="auto"
+              height="40%"
+              width="auto"
               alt="ico-img"
             />
             <div>
@@ -74,15 +77,15 @@ const Today = ({ city }) => {
             </div>
           </Grid>
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div style={{ marginBottom: "10px" }}> Afternoon</div>
+            <div style={{ marginBottom: "0.6rem" }}> Afternoon</div>
             <div
-              style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
+              style={{ fontSize: "2rem", color: "blue", fontWeight: "bold" }}
             >
               {parseInt(day_data.afternoon.temp - 273.15)}&#176;
             </div>
             <img
               src={`http://openweathermap.org/img/wn/${day_data.afternoon.icon}@2x.png`}
-              height="auto"
+              height="40%"
               alt="ico-img"
             />
             <div>
@@ -95,15 +98,15 @@ const Today = ({ city }) => {
             </div>
           </Grid>
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div style={{ marginBottom: "10px" }}> Evening</div>
+            <div style={{ marginBottom: "0.6rem" }}> Evening</div>
             <div
-              style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
+              style={{ fontSize: "2rem", color: "blue", fontWeight: "bold" }}
             >
               {parseInt(day_data.evening.temp - 273.15)}&#176;
             </div>
             <img
               src={`http://openweathermap.org/img/wn/${day_data.evening.icon}@2x.png`}
-              height="auto"
+              height="40%"
               alt="ico-img"
             />
             <div>
@@ -116,15 +119,15 @@ const Today = ({ city }) => {
             </div>
           </Grid>
           <Grid item xs={3} style={{ borderRight: "1px solid #ddd" }}>
-            <div style={{ marginBottom: "10px" }}> Night</div>
+            <div style={{ marginBottom: "0.6rem" }}> Night</div>
             <div
-              style={{ fontSize: "30px", color: "blue", fontWeight: "bold" }}
+              style={{ fontSize: "2rem", color: "blue", fontWeight: "bold" }}
             >
               {parseInt(day_data.night.temp - 273.15)}&#176;
             </div>
             <img
               src={`http://openweathermap.org/img/wn/${day_data.night.icon}@2x.png`}
-              height="auto"
+              height="40%"
               alt="ico-img"
             />
             <div>
@@ -141,9 +144,9 @@ const Today = ({ city }) => {
             <Button
               variant="contained"
               sx={{
-                borderRadius: "10px",
+                borderRadius: "0.6rem",
                 fontSize: "small",
-                padding: "8px",
+                padding: "0.5rem",
                 // marginRight: "auto",
               }}
               onClick={() => {

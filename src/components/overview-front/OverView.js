@@ -105,13 +105,9 @@ const OverView = ({ city }) => {
             ? "card card-50d"
             : "card card-50n"
         }
-        // style={{ border: "2px solid black" }}
-        // backgroundImage="url('../../data/clouds-in-the-sky.jpg')"
-        // backgroundRepeat="no-repeat"
+        marginTop="1.5rem"
         sx={{
           color: "white",
-          // backgroundImage: `url('../../data/clouds-in-the-sky.jpg')`,
-          // backgroundRepeat: "no-repeat",
         }}
       >
         <Grid item xs={12}>
@@ -120,43 +116,47 @@ const OverView = ({ city }) => {
             component="div"
             textAlign={"center"}
             sx={{
-              fontSize: "30px",
+              fontSize: "2rem",
               fontWeight: "bold",
-              marginTop: "15px",
+              marginTop: "1rem",
               // color: "blue",
               background: "rgba(40, 40, 40, 0.3)",
-              padding: "5px",
+              padding: "0.3rem",
             }}
           >
             {city}{" "}
           </Typography>
-          <span fontSize="10px" color="#5c64d2">
+          <span fontSize="0.7rem" color="#5c64d2">
             As of {update_time(final_res.current.dt)}
           </span>
         </Grid>
 
-        <Grid container className="card-content" marginBottom="20px">
-          {/* /////// Image Grid ///////// */}
-          <Grid item xs={12} md={4}>
+        <Grid
+          container
+          className="card-content"
+          marginBottom="1.3rem"
+          justifyContent="space-evenly"
+          alignItems={"center"}
+        >
+          <Grid item xs={6} md={4}>
             <img
               src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
-              // src={srf}
-              height="150px"
-              // width="30%"
+              height="100px"
             />
           </Grid>
 
           {/* /////// Text Grid ///////// */}
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={6} md={4}>
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                marginBottom: "0.6rem",
               }}
             >
-              <div style={{ fontSize: "61px", fontWeight: "bold" }}>{temp}</div>
+              <div style={{ fontSize: "4rem", fontWeight: "bold" }}>{temp}</div>
 
               <ButtonGroup
                 orientation="vertical"
@@ -166,8 +166,8 @@ const OverView = ({ city }) => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  padding: "5px",
-                  margin: "5px",
+                  padding: "0.3rem",
+                  margin: "0.3rem",
                 }}
               >
                 <Button
@@ -195,12 +195,12 @@ const OverView = ({ city }) => {
             </div>
             <span
               style={{
-                fontSize: "15px",
+                fontSize: "1rem",
                 fontWeight: "bolder",
-                marginTop: "15px",
+                marginTop: "1rem",
               }}
             >
-              <span style={{ display: "block", marginBottom: "5px" }}>
+              <span style={{ display: "block", marginBottom: "0.3rem" }}>
                 {" "}
                 {final_res.current.weather[0].main}{" "}
               </span>
@@ -210,6 +210,7 @@ const OverView = ({ city }) => {
           </Grid>
 
           {/* ////////// Grid extra data ///////// */}
+
           <Grid
             item
             xs={12}
@@ -218,22 +219,26 @@ const OverView = ({ city }) => {
               display: "flex",
               flexDirection: "column",
             }}
+            fontSize="1rem"
+            fontWeight="525"
           >
-            <span style={{ display: "block", marginBottom: "3px" }}>
-              {" "}
-              Feels Like : {parseInt(final_res.current.feels_like - 273.15)}
-            </span>
-            <span style={{ display: "block", marginBottom: "3px" }}>
-              {" "}
-              Wind Speed : {final_res.current.wind_speed} kmph{" "}
-              <span className="material-icons"></span>
-            </span>
-            <span style={{ display: "block", marginBottom: "3px" }}>
-              visibility : {parseInt(final_res.current.visibility / 1000)}
-            </span>
-            <span style={{ display: "block", marginBottom: "3px" }}>
-              Humidity : {final_res.current.humidity}%
-            </span>
+            <div className="extra">
+              <span style={{ display: "block", marginBottom: "0.2rem" }}>
+                {" "}
+                Feels Like : {parseInt(final_res.current.feels_like - 273.15)}
+              </span>
+              <span style={{ display: "block", marginBottom: "0.2rem" }}>
+                {" "}
+                Wind Speed : {final_res.current.wind_speed} kmph{" "}
+                <span className="material-icons"></span>
+              </span>
+              <span style={{ display: "block", marginBottom: "0.2rem" }}>
+                visibility : {parseInt(final_res.current.visibility / 1000)}
+              </span>
+              <span style={{ display: "block", marginBottom: "0.2rem" }}>
+                Humidity : {final_res.current.humidity}%
+              </span>
+            </div>
           </Grid>
           {/* </Grid> */}
         </Grid>

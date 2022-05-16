@@ -18,17 +18,18 @@ const Det = ({ data }) => {
         style={{
           boxShadow: "1px 0px 0px 0px rgb(179, 179, 179)",
         }}
+        marginBottom="5rem"
       >
         <div>
-          <div style={{ fontSize: "larger", marginBottom: "15px" }}>
+          <div style={{ fontSize: "larger", marginBottom: "1rem" }}>
             {i === 1 ? "Now" : update_time(item.dt)}
           </div>
           <div
             style={{
-              fontSize: "30px",
+              fontSize: "2rem",
               color: "blue",
               fontWeight: "bold",
-              marginBottom: "10px",
+              marginBottom: "1rem",
             }}
           >
             {parseInt(item.temp - 273.15)}&#176;
@@ -40,7 +41,7 @@ const Det = ({ data }) => {
           <div style={{ fontSize: "larger", marginTop: "10px" }}>
             {item.clouds}%
             <img
-              height="15px"
+              height="1rem"
               src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
               // style={{ transform: "rotateX(45)" }}
             />
@@ -57,15 +58,15 @@ const Hour = () => {
 
   if (!isLoading) {
     return (
-      <Grid container marginBottom="20px">
+      <Grid container marginBottom="1.3rem">
         <Grid
           item
           xs={12}
           style={{
-            fontSize: "25px",
+            fontSize: "1.6rem",
             fontWeight: "bold",
-            margin: "20px",
-            marginBottom: "20px",
+            margin: "1.3rem",
+            marginBottom: "1.3rem",
           }}
         >
           Hourly Forecast
@@ -78,13 +79,13 @@ const Hour = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} marginTop="35px" marginBottom="20px">
+        <Grid item xs={12} marginTop="-2rem" marginBottom="1.3rem">
           <Button
             variant="contained"
             sx={{
-              borderRadius: "10px",
+              borderRadius: "0.6rem",
               fontSize: "small",
-              padding: "8px",
+              padding: "0.5rem",
               // marginRight: "auto",
             }}
             onClick={() => {

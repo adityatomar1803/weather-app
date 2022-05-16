@@ -29,43 +29,47 @@ const Details = ({ city }) => {
     return <div>Loading...</div>;
   } else {
     return (
-      <Grid container marginBottom="20px">
+      <Grid container marginBottom="1.4rem">
         <Grid
           item
           xs={12}
-          style={{ fontSize: "25px", fontWeight: "bold", margin: "20px" }}
+          style={{ fontSize: "1.6rem", fontWeight: "bold", margin: "1.4rem" }}
         >
           Details of Weather at {city}
         </Grid>
+
         <Grid
           item
-          xs={6}
+          xs={12}
+          md={6}
           sx={{
             display: "grid",
-            paddingBottom: "20px",
+            paddingBottom: "1.3rem",
             borderBottom: "1px solid #c4c4c4",
           }}
         >
-          <span style={{ fontSize: "30px", fontWeight: "bold", color: "blue" }}>
+          <span style={{ fontSize: "2rem", fontWeight: "bold", color: "blue" }}>
             {parseInt(final_res.current.feels_like - 273.15)}&#176;
           </span>
           <span>Feels Like</span>
         </Grid>
+
         <Grid
           item
-          xs={6}
+          xs={12}
+          md={6}
           sx={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
-            padding: "10px",
+            padding: "0.6rem",
             borderBottom: "1px solid #c4c4c4",
           }}
         >
           <span
             style={{
-              margin: "20px",
+              margin: "1.4rem",
             }}
           >
             <img src="https://img.icons8.com/fluency/48/000000/sunrise.png" />
@@ -73,7 +77,7 @@ const Details = ({ city }) => {
           <span>{update_time(final_res.current.sunrise)}</span>
           <span
             style={{
-              margin: "20px",
+              margin: "1.4rem",
             }}
           >
             <img src="https://img.icons8.com/fluency/48/000000/sunset.png" />
@@ -95,13 +99,11 @@ const Details = ({ city }) => {
           />
         </Grid>
 
-        {/* <Grid item md={2}></Grid> */}
-
         <Grid
           item
           xs={12}
           md={6}
-          boxShadow="0px 20px 2px -20px rgb(179, 179, 179)"
+          boxShadow="0px 1.4rem 2px -1.4rem rgb(179, 179, 179)"
         >
           <MinuteDetails
             name="Humidity"
@@ -109,11 +111,12 @@ const Details = ({ city }) => {
             item={final_res.current.humidity + " %"}
           />
         </Grid>
+
         <Grid
           item
           xs={12}
           md={6}
-          boxShadow="0px 20px 2px -20px rgb(179, 179, 179)"
+          boxShadow="0px 1.4rem 2px -1.4rem rgb(179, 179, 179)"
         >
           <MinuteDetails
             name="Dew Point"
@@ -128,7 +131,7 @@ const Details = ({ city }) => {
           item
           xs={12}
           md={6}
-          boxShadow="0px 20px 2px -20px rgb(179, 179, 179)"
+          boxShadow="0px 1.4rem 2px -1.4rem rgb(179, 179, 179)"
         >
           <MinuteDetails
             name="Pressure"
