@@ -26,7 +26,7 @@ html {
 
 .hourlyWindImage2 {
   height: auto;
-  max-width: 20%;
+  max-width: 22%;
 }
 
 .hourlyRainImage {
@@ -41,7 +41,7 @@ html {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .hourlyWindImage {
@@ -329,7 +329,7 @@ html {
 
 .nav-item {
   color: white;
-  text-align: end;
+  text-align: flex-end;
   align-items: legacy;
   display: flex;
 }

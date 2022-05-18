@@ -27,7 +27,7 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          className="HourlyWindImage2"
+          className="hourlyWindImage"
           alt="img could not be loaded"
           src="https://img.icons8.com/color/48/000000/wind.png"
         />
@@ -38,7 +38,7 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          className="HumidityHourlyImage"
+          className="HumidityWeeklyImage"
           alt="img could not be loaded"
           src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-humidity-weather-justicon-flat-justicon-1.png"
         />
@@ -49,7 +49,7 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          className="HourlyUvImage"
+          className="UvWeeklyImage"
           alt="img could not be loaded"
           src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-uv-index-weather-justicon-lineal-color-justicon.png"
         />
@@ -157,9 +157,9 @@ const Accordian = ({ item }) => {
         justifyContent="center"
       >
         <img
+          className="hourlyWindImage2"
           src="https://img.icons8.com/color/48/000000/wind.png"
           alt="img could not be loaded"
-          className="hourlyWindImage"
         />
         {item.wind_speed} km/h
       </Grid>
