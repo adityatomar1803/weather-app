@@ -41,7 +41,7 @@ const Det = ({ data }) => {
           <div style={{ fontSize: "larger", marginTop: "10px" }}>
             {item.clouds}%
             <img
-              height="1rem"
+              height="15px"
               src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
               // style={{ transform: "rotateX(45)" }}
             />
