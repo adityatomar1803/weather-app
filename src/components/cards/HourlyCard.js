@@ -15,13 +15,11 @@ const MinuteDetails = ({ item }) => {
       borderRadius="10px"
     >
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
-        {/* <div> */}
         <img
-          // height="auto"
           className="HourlyFeelsLikeImage"
+          alt="img could not be loaded"
           src="https://img.icons8.com/color/48/000000/hot.png"
         />
-        {/* </div> */}
         <div>
           <div>Feels Like</div>
           <div>{item.feels_like}&#176;</div>
@@ -29,8 +27,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          // height="30px"
           className="HourlyWindImage2"
+          alt="img could not be loaded"
           src="https://img.icons8.com/color/48/000000/wind.png"
         />
         <div>
@@ -40,8 +38,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          // height="30px"
           className="HumidityHourlyImage"
+          alt="img could not be loaded"
           src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-humidity-weather-justicon-flat-justicon-1.png"
         />
         <div>
@@ -51,8 +49,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          // height="30px"
           className="HourlyUvImage"
+          alt="img could not be loaded"
           src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-uv-index-weather-justicon-lineal-color-justicon.png"
         />
         <div>
@@ -63,7 +61,7 @@ const MinuteDetails = ({ item }) => {
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
           height="30px"
-          // className="hourlyCloudImage"
+          alt="img could not be loaded"
           src="https://img.icons8.com/cute-clipart/64/000000/cloud.png"
         />
         <div>
@@ -73,8 +71,8 @@ const MinuteDetails = ({ item }) => {
       </Grid>
       <Grid item xs={4} display="block ruby" margin="15px 0px 15px 0px">
         <img
-          // height="30px"
           className="HourlyPressureImage"
+          alt="img could not be loaded"
           src="https://img.icons8.com/color/48/000000/pressure.png"
         />
 
@@ -147,7 +145,7 @@ const Accordian = ({ item }) => {
         <img
           className="hourlyRainImage"
           src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-          // style={{ transform: "rotateX(45)" }}
+          alt="img could not be loaded"
         />
       </Grid>
 
@@ -160,7 +158,7 @@ const Accordian = ({ item }) => {
       >
         <img
           src="https://img.icons8.com/color/48/000000/wind.png"
-          // height="18px"
+          alt="img could not be loaded"
           className="hourlyWindImage"
         />
         {item.wind_speed} km/h
@@ -171,6 +169,7 @@ const Accordian = ({ item }) => {
           <img
             height="15px"
             src="https://img.icons8.com/fluency/48/000000/expand-arrow.png"
+            alt="img could not be loaded"
             style={{ marginRight: "2rem" }}
           />
         </Button>
@@ -201,90 +200,6 @@ const Accordian = ({ item }) => {
         ""
       )}
     </Grid>
-
-    // <Grid
-    //   container
-    //   justifyContent="space-evenly"
-    //   alignItems="center"
-    //   borderBottom="1px solid #d4d4d5"
-    // >
-    //   <Grid item xs={1} textAlign="end">
-    //     {t}
-    //   </Grid>
-    //   <Grid item xs={1} fontSize="1.1rem" fontWeight="bold">
-    //     {parseInt(item.temp - 273.15)}&#176;
-    //   </Grid>
-
-    //   <Grid item xs={2} display="flex" alignItems="center">
-    //     <img
-    //       src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-    //       height="70px"
-    //       alt="ico-img"
-    //     />
-
-    //     <span>{item.weather[0].main}</span>
-    //   </Grid>
-
-    //   <Grid item xs={2}></Grid>
-
-    //   <Grid item xs={2}>
-    //     {item.clouds}%
-    //     <img
-    //       height="15px"
-    //       src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-    //       // style={{ transform: "rotateX(45)" }}
-    //     />
-    //   </Grid>
-    //   <Grid
-    //     item
-    //     xs={2}
-    //     display="flex"
-    //     alignItems="center"
-    //     justifyContent="center"
-    //   >
-    //     <img
-    //       src="https://img.icons8.com/color/48/000000/wind.png"
-    //       height="25px"
-    //       style={{ marginRight: "0.6rem" }}
-    //     />
-    //     {item.wind_speed} km/h
-    //   </Grid>
-    //   <Grid item xs={1}>
-    //     <Button onClick={handleClick}>
-    //       <img
-    //         height="20px"
-    //         src="https://img.icons8.com/fluency/48/000000/expand-arrow.png"
-    //       />
-    //     </Button>
-    //   </Grid>
-
-    //   <Grid item xs={11}>
-    //     {/* {console.log("inside the grid")} */}
-    //     <Collapse in={open} timeout="auto" unmountOnExit>
-    //       {/* {console.log("inside collapse component")}dsfdf */}
-    //       <MinuteDetails item={item} />
-    //     </Collapse>
-    //   </Grid>
-
-    //   {t === "23:30" ? (
-    //     <Grid
-    //       item
-    //       xs={12}
-    //       padding="15px"
-    //       fontSize="larger"
-    //       fontWeight="bold"
-    //       borderTop="1px solid #d4d4d5"
-    //     >
-    //       {months[date.getMonth()] +
-    //         " " +
-    //         (date.getDate() + 1) +
-    //         ", " +
-    //         date.getFullYear()}
-    //     </Grid>
-    //   ) : (
-    //     ""
-    //   )}
-    // </Grid>
   );
 };
 
@@ -340,7 +255,6 @@ export const HourlyCard = ({ city }) => {
               borderTop: "1px solid aliceblue",
             }}
           >
-            {/* {<DisplayData data={final_res.hourly} />} */}
             {<DisplayData data={final_res.hourly} />}
           </div>
         </Grid>

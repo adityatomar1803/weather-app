@@ -6,10 +6,8 @@ import Collapse from "@mui/material/Collapse";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { update_date } from "../../helper/Helper";
-// const day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const MinuteDetails = ({ item }) => {
-  // const date = new Date(item.dt * 1000);
   return (
     <Grid
       container
@@ -30,7 +28,6 @@ const MinuteDetails = ({ item }) => {
               justifyContent: "center",
               alignItems: "center",
               padding: "0.6rem",
-              // borderBottom: "1px solid #c4c4c4",
             }}
           >
             <span
@@ -41,6 +38,7 @@ const MinuteDetails = ({ item }) => {
               <img
                 className="DailySun"
                 src="https://img.icons8.com/fluency/48/000000/sunrise.png"
+                alt="img could not be loaded"
               />
             </span>
             <span> Sunrise: {update_time(item.sunrise)}</span>
@@ -52,10 +50,10 @@ const MinuteDetails = ({ item }) => {
               <img
                 className="DailySun"
                 src="https://img.icons8.com/fluency/48/000000/sunset.png"
+                alt="img could not be loaded"
               />
             </span>
             <span>Sunset: {update_time(item.sunset)}</span>
-            {/* <span>Feels Like</span> */}
           </Grid>
 
           <Grid
@@ -67,7 +65,6 @@ const MinuteDetails = ({ item }) => {
               justifyContent: "center",
               alignItems: "center",
               padding: "0.3rem",
-              // borderBottom: "1px solid #c4c4c4",
             }}
           >
             <span
@@ -78,20 +75,13 @@ const MinuteDetails = ({ item }) => {
               <img
                 className="DailySun"
                 src="https://img.icons8.com/fluency/48/000000/temperature.png"
+                alt="img could not be loaded"
               />
             </span>
             <span>Temperature: {parseInt(item.temp.day - 273.15)}&#176;</span>
-            {/* <span
-              style={{
-                margin: "5px",
-              }}
-            >
-              <img src="" />
-            </span> */}
             <span>
               , Feels Like: {parseInt(item.feels_like.day - 273.15)}&#176;
             </span>
-            {/* <span>Feels Like</span> */}
           </Grid>
         </Grid>
       </Grid>
@@ -109,7 +99,6 @@ const MinuteDetails = ({ item }) => {
               justifyContent: "center",
               alignItems: "center",
               padding: "0.3rem",
-              // borderBottom: "1px solid #c4c4c4",
             }}
           >
             <span
@@ -120,6 +109,7 @@ const MinuteDetails = ({ item }) => {
               <img
                 className="DailySun"
                 src="https://img.icons8.com/fluency/48/000000/moonrise.png"
+                alt="img could not be loaded"
               />
             </span>
             <span>Moonrise: {update_time(item.moonrise)}</span>
@@ -131,10 +121,10 @@ const MinuteDetails = ({ item }) => {
               <img
                 className="DailySun"
                 src="https://img.icons8.com/fluency/48/000000/moonset.png"
+                alt="img could not be loaded"
               />
             </span>
             <span>Moonset: {update_time(item.moonset)}</span>
-            {/* <span>Feels Like</span> */}
           </Grid>
 
           <Grid
@@ -146,7 +136,6 @@ const MinuteDetails = ({ item }) => {
               justifyContent: "center",
               alignItems: "center",
               padding: "0.3rem",
-              // borderBottom: "1px solid #c4c4c4",
             }}
           >
             <span
@@ -157,20 +146,14 @@ const MinuteDetails = ({ item }) => {
               <img
                 className="DailySun"
                 src="https://img.icons8.com/fluency/48/000000/temperature.png"
+                alt="img could not be loaded"
               />
             </span>
             <span>Temperature: {parseInt(item.temp.night - 273.15)}&#176;</span>
-            {/* <span
-              style={{
-                margin: "5px",
-              }}
-            >
-              <img src="" />
-            </span> */}
+
             <span>
               , Feels Like: {parseInt(item.feels_like.night - 273.15)}&#176;
             </span>
-            {/* <span>Feels Like</span> */}
           </Grid>
         </Grid>
       </Grid>
@@ -185,8 +168,9 @@ const MinuteDetails = ({ item }) => {
             }}
           >
             <img
-              className="HourlyPressureImage"
+              className="PressureWeeklyImage"
               src="https://img.icons8.com/color/48/000000/pressure.png"
+              alt="img could not be loaded"
             />{" "}
             Pressure: {item.pressure}
           </div>
@@ -198,9 +182,9 @@ const MinuteDetails = ({ item }) => {
             }}
           >
             <img
-              // height="25px"
-              className="HumidityHourlyImage"
+              className="HumidityWeeklyImage"
               src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-humidity-weather-justicon-flat-justicon-1.png"
+              alt="img could not be loaded"
             />{" "}
             Humidity: {item.humidity}
           </div>
@@ -215,9 +199,9 @@ const MinuteDetails = ({ item }) => {
             }}
           >
             <img
-              // height="25px"
-              className="HourlyPressureImage"
+              className="DewWeeklyImage"
               src="https://img.icons8.com/fluency/48/000000/dew-point.png"
+              alt="img could not be loaded"
             />{" "}
             Dew Point: {item.dew_point}
           </div>
@@ -229,9 +213,9 @@ const MinuteDetails = ({ item }) => {
             }}
           >
             <img
-              // height="25px"
-              className="HourlyUvImage"
+              className="UvWeeklyImage"
               src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-uv-index-weather-justicon-lineal-color-justicon.png"
+              alt="img could not be loaded"
             />
             UV Index: {item.uvi}
           </div>
@@ -266,10 +250,8 @@ const Accordian = ({ item }) => {
         <img
           className="hourlyWeatherImage"
           src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-          // height="70px"
           alt="ico-img"
         />
-        {/* {item.weather[0].icon} */}
         <span>{item.weather[0].main}</span>
       </Grid>
 
@@ -280,7 +262,7 @@ const Accordian = ({ item }) => {
         <img
           className="hourlyRainImage"
           src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-          // style={{ transform: "rotateX(45)" }}
+          alt="img could not be loaded"
         />
       </Grid>
 
@@ -293,6 +275,7 @@ const Accordian = ({ item }) => {
       >
         <img
           src="https://img.icons8.com/color/48/000000/wind.png"
+          alt="img could not be loaded"
           className="hourlyWindImage"
         />
         {item.wind_speed} km/h
@@ -303,6 +286,7 @@ const Accordian = ({ item }) => {
           <img
             height="15px"
             src="https://img.icons8.com/fluency/48/000000/expand-arrow.png"
+            alt="img could not be loaded"
             style={{ marginRight: "2rem" }}
           />
         </Button>
@@ -330,7 +314,6 @@ const DisplayData = ({ data }) => {
 
 export const DailyCard = ({ city }) => {
   const { isLoading, final_res } = useWeatherData();
-  // console.log("inside hourly card");
 
   if (!isLoading) {
     return (
@@ -370,7 +353,6 @@ export const DailyCard = ({ city }) => {
               borderTop: "1px solid aliceblue",
             }}
           >
-            {/* {<DisplayData data={final_res.hourly} />} */}
             {<DisplayData data={final_res.daily} />}
           </div>
         </Grid>

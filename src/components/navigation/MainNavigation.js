@@ -37,9 +37,7 @@ export function CustomLink({ children, to, ...props }) {
   );
 }
 
-const MainNavigation = ({ city }) => {
-  // let  = useMatch('/');
-  // console.log(useMatch("/"));
+const MainNavigation = ({ city, blackTheme }) => {
   const { isLoading } = useWeatherData();
 
   if (!isLoading) {
@@ -52,7 +50,7 @@ const MainNavigation = ({ city }) => {
             alignItems={"center"}
             padding={"0.2rem"}
             paddingTop={"0.5rem"}
-            backgroundColor={"#0E2333"}
+            backgroundColor={blackTheme ? " #2c2c31" : "#0E2333"}
           >
             <Grid item xs={4} sm={3} md={2}>
               <CustomLink to="/" className="Link">

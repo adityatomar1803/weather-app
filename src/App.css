@@ -11,6 +11,14 @@ html {
   max-width: 50%;
 }
 
+.PressureWeeklyImage {
+  height: 80%;
+  max-width: 50%;
+}
+.MuiTextField-root {
+  background-color: white;
+}
+
 .HourlyUvImage {
   height: auto;
   max-width: 25%;
@@ -27,10 +35,6 @@ html {
 }
 .IconThreeLines {
   display: none;
-}
-
-.TopNavbar {
-  background-color: #326a84;
 }
 
 .city-data {
@@ -60,6 +64,19 @@ html {
   max-width: 100%;
 }
 
+.HumidityWeeklyImage {
+  height: 50%;
+  max-width: 45%;
+}
+.DewWeeklyImage {
+  height: 75%;
+  max-width: 40%;
+}
+.UvWeeklyImage {
+  height: 70%;
+  max-width: 40%;
+}
+
 @media (max-width: 900px) {
   html {
     font-size: 15px;
@@ -69,6 +86,26 @@ html {
   .MainNavigation,
   .extra {
     display: none;
+  }
+
+  .UvWeeklyImage {
+    height: 60%;
+    max-width: 40%;
+  }
+
+  .DewWeeklyImage {
+    height: 65%;
+    max-width: 60%;
+  }
+
+  .HumidityWeeklyImage {
+    height: 50%;
+    max-width: 40%;
+  }
+
+  .PressureWeeklyImage {
+    height: 70%;
+    /* max-width: 50%; */
   }
 
   .DailySun {
@@ -131,6 +168,26 @@ html {
     font-size: 14px;
   }
 
+  .UvWeeklyImage {
+    height: 50%;
+    max-width: 40%;
+  }
+
+  .DewWeeklyImage {
+    height: 58%;
+    max-width: 50%;
+  }
+
+  .PressureWeeklyImage {
+    height: 65%;
+    /* max-width: 50%; */
+  }
+
+  .HumidityWeeklyImage {
+    height: 45%;
+    max-width: 40%;
+  }
+
   .DailySun {
     /* height: auto; */
     max-width: 80%;
@@ -178,6 +235,26 @@ html {
     /* height: auto; */
     max-width: 70%;
   }
+
+  .UvWeeklyImage {
+    height: 45%;
+    max-width: 40%;
+  }
+  .DewWeeklyImage {
+    height: 50%;
+    max-width: 40%;
+  }
+
+  .HumidityWeeklyImage {
+    height: 40%;
+    max-width: 30%;
+  }
+
+  .PressureWeeklyImage {
+    height: 55%;
+    /* max-width: 50%; */
+  }
+
   .HourlyPressureImage {
     /* height: auto; */
     max-width: 32%;
@@ -219,7 +296,8 @@ html {
 
 .App {
   text-align: center;
-  background-image: linear-gradient(#326a84, #d3f1ff);
+  /* background-image: linear-gradient(#326a84, #d3f1ff); */
+  background-image: linear-gradient(#326a84, #c6e1ec);
   /* background-repeat: no-repeat; */
   background-attachment: fixed;
 }

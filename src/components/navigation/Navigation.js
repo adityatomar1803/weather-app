@@ -7,26 +7,31 @@ import { useWeatherData } from "../../context/weather.context";
 import { CustomLink } from "./MainNavigation";
 
 import { useNavigate } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
-import { styled } from "@mui/material";
 import { Backdrop } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 
 import { createTheme } from "@mui/material/styles";
-import grey from "@mui/material/colors/grey";
 
 const theme = createTheme({
-  palette: {
-    light: "#FFFFFF",
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: "1rem",
+        },
+      },
+    },
   },
 });
 
-const Navigation = ({ data_city, finalCity, city }) => {
+const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
   const { isLoading, final_res } = useWeatherData();
 
   const [toggle, setToggle] = useState(false);
   console.log("toggle is ", toggle);
-  // const [refresh, setRefresh] = useState(false);
   console.log("re-entered");
 
   const navigate = useNavigate();
@@ -51,10 +56,7 @@ const Navigation = ({ data_city, finalCity, city }) => {
         container
         spacing={2}
         justifyContent="space-evenly"
-        // backgroundColor="#326A84"
-        // color="black"
-        // backgroundColor="white"
-        className="TopNavbar"
+        backgroundColor={blackTheme ? "black" : "#326a84"}
         alignItems={"center"}
         marginTop="-1rem"
         marginLeft="-1rem"
@@ -85,7 +87,6 @@ const Navigation = ({ data_city, finalCity, city }) => {
               alt="ico-img"
             />
           </div>
-          {/* city data */}
         </Grid>
         <Grid item xs={6} sm={3} md={1} className="Refresh">
           <div
@@ -95,25 +96,25 @@ const Navigation = ({ data_city, finalCity, city }) => {
             }}
           >
             <span className="material-icons">refresh</span>
-            {/* <span></span> */}
             Refresh
           </div>
         </Grid>
         <Grid item xs={4} sm={3} md={1} className="Theme">
-          <div className="nav-item">
+          <div className="nav-item" onClick={() => setTheme(!blackTheme)}>
             <span className="material-icons">dark_mode</span> Theme
           </div>
         </Grid>
 
-        <Grid item xs={4} sm={3}>
-          {/* <div className="material-icons">search</div> */}
+        <Grid item xs={4} sm={3} marginBottom="0.1rem">
           <div>
             <Autocomplete
-              // sx={{ marginTop: "5px" }}
               className="auto-complete"
               id="controlled-demo"
+              disableUnderline={true}
+              autoHighlight
               options={data_city}
               filterOptions={filterOptions}
+              size="small"
               value={value}
               onChange={(_, newValue) => {
                 finalCityUsage(newValue);
@@ -127,9 +128,9 @@ const Navigation = ({ data_city, finalCity, city }) => {
                 <TextField
                   {...params}
                   label="Enter city"
-                  variant="standard"
-
-                  // marginTop="10px"
+                  variant="filled"
+                  fullWidth
+                  color="primary"
                 />
               )}
             />

@@ -26,6 +26,11 @@ ChartJS.register(
 );
 
 const options = {
+  elements: {
+    point: {
+      radius: 0,
+    },
+  },
   plugins: {
     legend: {
       position: "top",
@@ -122,41 +127,78 @@ const Stats = () => {
     };
 
     return (
-      <div>
+      <div
+        style={{
+          display: "Grid",
+          justifyContent: "center",
+          backgroundColor: "white",
+          marginTop: "1.4rem",
+          marginBottom: "1.4rem",
+        }}
+      >
         <div
           style={{
-            backgroundColor: "white",
-            position: "relative",
-            width: "800px",
-            // height: "400px",
-            left: "20%",
-            marginTop: "20px",
-            marginBottom: "20px",
-            padding: "20px",
+            padding: "1.4rem",
           }}
         >
-          <span style={{ marginBotton: "20px", fontSize: "large" }}>
+          <span style={{ marginBotton: "1.4rem", fontSize: "large" }}>
             Temperature Fluctuations for next 24 hours
           </span>
-          <Line data={data_hourly} options={options} />
+
+          <div
+            className="stats"
+            style={
+              window.screen.width > 900
+                ? {
+                    position: "relative",
+                    width: "70vw",
+                  }
+                : window.screen.width < 600
+                ? {
+                    position: "relative",
+                    width: "90vw",
+                  }
+                : {
+                    position: "relative",
+                    width: "80vw",
+                  }
+            }
+          >
+            <Line data={data_hourly} options={options} />
+          </div>
         </div>
 
         <div
           style={{
-            backgroundColor: "white",
-            padding: "20px",
-            position: "relative",
-            width: "800px",
-            // height: "400px",
-            left: "20%",
-            marginTop: "20px",
-            marginBottom: "20px",
+            padding: "1.4rem",
           }}
         >
-          <span style={{ marginBotton: "20px", fontSize: "large" }}>
+          <span style={{ marginBotton: "1.4rem", fontSize: "large" }}>
             Temperature Fluctuations for next 7 days
           </span>
-          <Line data={data_daily} options={options} />
+
+          <div
+            className="stats"
+            style={
+              window.screen.width > 900
+                ? {
+                    position: "relative",
+                    width: "70vw",
+                  }
+                : window.screen.width < 600
+                ? {
+                    position: "relative",
+                    width: "90vw",
+                    // height: "50vh",
+                  }
+                : {
+                    position: "relative",
+                    width: "80vw",
+                  }
+            }
+          >
+            <Line data={data_daily} options={options} />
+          </div>
         </div>
       </div>
     );

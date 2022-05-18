@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "./navigation/Navigation";
-import OverView from "./overview-front/OverView";
-import DailyCard from "./cards/DailyCard";
 import { WeatherProvider } from "../context/weather.context";
 import MainNavigation from "./navigation/MainNavigation";
-import AirQuality from "./overview-front/AirQuality";
-import { Grid } from "@mui/material";
 import Footer from "./Footer";
 
 const MainComponent = () => {
   const [citiess, setCities] = useState([]);
   const [selected_city, setCity] = useState(null);
+  const [blackTheme, setTheme] = useState(false);
 
   useEffect(() => {
     getCities();
@@ -35,18 +32,22 @@ const MainComponent = () => {
   };
 
   return (
-    <WeatherProvider city={selected_city || "Delhi, India"}>
-      <Navigation
-        data_city={citiess}
-        finalCity={finalCity}
-        city={selected_city || "Delhi, India"}
-      />
-      <MainNavigation city={selected_city || "Delhi, India"} />
-
-      {/* </Grid> */}
-      {/* </Grid> */}
-      <Footer />
-    </WeatherProvider>
+    <div style={{ backgroundColor: blackTheme ? "black" : "" }}>
+      <WeatherProvider city={selected_city || "Delhi, India"}>
+        <Navigation
+          data_city={citiess}
+          finalCity={finalCity}
+          city={selected_city || "Delhi, India"}
+          blackTheme={blackTheme}
+          setTheme={setTheme}
+        />
+        <MainNavigation
+          city={selected_city || "Delhi, India"}
+          blackTheme={blackTheme}
+        />
+        <Footer />
+      </WeatherProvider>
+    </div>
   );
 };
 
