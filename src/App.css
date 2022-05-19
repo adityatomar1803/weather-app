@@ -451,8 +451,8 @@ html {
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
-}
-
+} 
+   
 .card-11d {
   background-image: url("data/background-photo/11d.jpg");
   background-repeat: no-repeat;
@@ -467,6 +467,7 @@ html {
   background-image: url("data/background-photo/50d.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  /* opacity: 0.2; */
 }
 
 .card-11n {
@@ -483,6 +484,7 @@ html {
   background-image: url("data/background-photo/50n.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  /* opacity: 0.2; */
 }
 
 .tempButton:active {
