@@ -4,7 +4,7 @@ import { useWeatherData } from "../context/weather.context";
 
 const Air = ({ city }) => {
   const { isLoading, pollution_data } = useWeatherData();
-
+  //this is just for demo
   if (!isLoading) {
     return (
       <Grid container justifyContent="center" alignItems="center">
