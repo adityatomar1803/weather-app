@@ -15,11 +15,11 @@ const MainComponent = () => {
 
   const finalCity = (selected) => {
     setCity(selected);
-    console.log("Main Component: selected_city", selected_city);
+    // console.log("Main Component: selected_city", selected_city);
   };
 
   const getCities = () => {
-    console.log("Main Component: inside getCities");
+    // console.log("Main Component: inside getCities");
     var demo_data = require("../data/final_city.json");
     var demo_cities = [];
     for (let d in demo_data) {

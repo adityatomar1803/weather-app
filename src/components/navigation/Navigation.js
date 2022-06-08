@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createFilterOptions, Grid, Button } from "@mui/material";
+import { createFilterOptions, Grid } from "@mui/material";
 import { Autocomplete } from "@mui/material";
 import logo from "../../data/logo.png";
 import { TextField } from "@mui/material";
@@ -10,29 +10,29 @@ import { useNavigate } from "react-router-dom";
 import { Backdrop } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 
-import { createTheme } from "@mui/material/styles";
+// import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
-  components: {
-    // Name of the component
-    MuiButton: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          fontSize: "1rem",
-        },
-      },
-    },
-  },
-});
+// const theme = createTheme({
+//   components: {
+//     // Name of the component
+//     MuiButton: {
+//       styleOverrides: {
+//         // Name of the slot
+//         root: {
+//           // Some CSS
+//           fontSize: "1rem",
+//         },
+//       },
+//     },
+//   },
+// });
 
 const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
   const { isLoading, final_res } = useWeatherData();
 
   const [toggle, setToggle] = useState(false);
-  console.log("toggle is ", toggle);
-  console.log("re-entered");
+  // console.log("toggle is ", toggle);
+  // console.log("re-entered");
 
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
   const [inputValue, setInputValue] = useState("");
 
   const finalCityUsage = (d) => {
-    console.log("Navigation: finalCityUsage", d);
+    // console.log("Navigation: finalCityUsage", d);
     finalCity(d);
   };
 

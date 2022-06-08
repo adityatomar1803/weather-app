@@ -1,7 +1,6 @@
-import { Button, Card, Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import React from "react";
 import { useWeatherData } from "../../context/weather.context";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
 import { useNavigate } from "react-router-dom";
@@ -11,12 +10,12 @@ import { Doughnut } from "react-chartjs-2";
 Chart.register(Tooltip, Title, ArcElement, Legend);
 
 const AirQuality = () => {
-  const options = {
-    cutout: "69%",
-    radius: "100%",
+  // const options = {
+  //   cutout: "69%",
+  //   radius: "100%",
 
-    plugins: { legend: { display: false } },
-  };
+  //   plugins: { legend: { display: false } },
+  // };
   const { isLoading, pollution_data } = useWeatherData();
   const navigate = useNavigate();
 
@@ -66,13 +65,13 @@ const AirQuality = () => {
       ],
     };
 
-    console.log(
-      "the data, pm2_5, color and comment is",
-      data,
-      pm2_5,
-      color_,
-      comment
-    );
+    // console.log(
+    //   "the data, pm2_5, color and comment is",
+    //   data,
+    //   pm2_5,
+    //   color_,
+    //   comment
+    // );
 
     return (
       <Grid

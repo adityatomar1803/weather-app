@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useWeatherData } from "../../context/weather.context";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
+
 import { ButtonGroup } from "@mui/material";
 import { Grid } from "@mui/material";
-// import logo from "../../data/logo.png";
-// import srf from "../../data/3d_icons/sun/4.png";
-// import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-
-import CardContent from "@mui/material/CardContent";
-// import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { update_time } from "../../helper/Helper";
@@ -43,7 +36,7 @@ const OverView = ({ city }) => {
       // temp = parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32);
       setTemp(parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32));
     }
-    console.log("c, k, f are :", c_variant, k_variant, f_variant);
+    // console.log("c, k, f are :", c_variant, k_variant, f_variant);
     return temp;
   };
 
@@ -51,17 +44,15 @@ const OverView = ({ city }) => {
     if (!isLoading) {
       temperatureGetter();
     }
-
-    return () => {};
-  }, [isLoading, final_res]);
+  }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
   } else {
-    console.log("OverView:: The final res is", final_res);
-    console.log("c, k, f are :", c_variant, k_variant, f_variant);
+    // console.log("OverView:: The final res is", final_res);
+    // console.log("c, k, f are :", c_variant, k_variant, f_variant);
     var desc = final_res.current.weather[0].icon;
-    console.log(desc);
+    // console.log(desc);
     // console.log(desc === "01d");
     // console.log("OverView:: The final res is", final_res);
     // ()=>temperatureGetter();
@@ -142,6 +133,7 @@ const OverView = ({ city }) => {
             <img
               src={`http://openweathermap.org/img/wn/${final_res.current.weather[0].icon}@2x.png`}
               height="100px"
+              alt="openweather map icon"
             />
           </Grid>
 

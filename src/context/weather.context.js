@@ -9,7 +9,7 @@ export const WeatherProvider = ({ city, children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("weather.context::useEffect", city);
+    // console.log("weather.context::useEffect", city);
 
     var demo_city = city.split(",", 2)[0];
     var country = city.split(",", 2)[1];
@@ -22,11 +22,11 @@ export const WeatherProvider = ({ city, children }) => {
     fetch(url_lat)
       .then((res) => res.json())
       .then((res) => {
-        console.log(
-          "weather.context.js: lat n lon :",
-          res[0]["lat"],
-          res[0]["lon"]
-        );
+        // console.log(
+        //   "weather.context.js: lat n lon :",
+        //   res[0]["lat"],
+        //   res[0]["lon"]
+        // );
         lat = res[0]["lat"];
         lon = res[0]["lon"];
         return fetch(
@@ -35,7 +35,7 @@ export const WeatherProvider = ({ city, children }) => {
       })
       .then((res) => res.json())
       .then((res) => {
-        console.log("weather.context:: second API result in json format", res);
+        // console.log("weather.context:: second API result in json format", res);
         setFinal(res);
         return fetch(
           `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${appid}`
@@ -43,7 +43,7 @@ export const WeatherProvider = ({ city, children }) => {
       })
       .then((res) => res.json())
       .then((res) => {
-        console.log("weather.context:: third API result in json format", res);
+        // console.log("weather.context:: third API result in json format", res);
         setPollutionData(res);
         setIsLoading(false);
       });

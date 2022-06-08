@@ -72,7 +72,7 @@ const Today = ({ city }) => {
               <img
                 height="15px"
                 src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-                // style={{ transform: "rotateX(45)" }}
+                alt="morning clouds"
               />
             </div>
           </Grid>
@@ -93,7 +93,7 @@ const Today = ({ city }) => {
               <img
                 height="15px"
                 src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-                // style={{ transform: "rotateX(45)" }}
+                alt="raindrop icon"
               />
             </div>
           </Grid>
@@ -114,7 +114,7 @@ const Today = ({ city }) => {
               <img
                 height="15px"
                 src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-                // style={{ transform: "rotateX(45)" }}
+                alt="raindrop icon"
               />
             </div>
           </Grid>
@@ -135,7 +135,7 @@ const Today = ({ city }) => {
               <img
                 height="15px"
                 src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
-                // style={{ transform: "rotateX(45)" }}
+                alt="raindrop icon"
               />
             </div>
           </Grid>

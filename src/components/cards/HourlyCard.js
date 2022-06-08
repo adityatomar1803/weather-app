@@ -215,7 +215,7 @@ const DisplayData = ({ data }) => {
 };
 export const HourlyCard = ({ city }) => {
   const { isLoading, final_res } = useWeatherData();
-  console.log("inside hourly card");
+  // console.log("inside hourly card");
 
   if (!isLoading) {
     return (

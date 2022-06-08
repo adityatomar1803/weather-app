@@ -410,6 +410,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .card-1n {
   background-image: url("data/background-photo/01n.jpg");
   /* background-image: url("data/nature.jpg"); */
@@ -451,8 +452,8 @@ html {
   /* background-image: url("data/nature.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
-} 
-   
+}
+
 .card-11d {
   background-image: url("data/background-photo/11d.jpg");
   background-repeat: no-repeat;
@@ -485,7 +486,17 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   /* opacity: 0.2; */
+  /* position: relative; */
 }
+
+/* .card-50n:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: url("data/background-photo/50n.jpg");
+  opacity: 0.5;
+} */
 
 .tempButton:active {
   background-color: aqua;

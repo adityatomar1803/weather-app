@@ -1,4 +1,3 @@
-import { ClassNames } from "@emotion/react";
 import { Grid } from "@mui/material";
 import React from "react";
 import { useWeatherData } from "../../context/weather.context";
@@ -9,7 +8,7 @@ const MinuteDetails = ({ name, source, item }) => {
     <Grid container sx={{ marginTop: "20px" }}>
       {/* <Grid item xs={1}></Grid> */}
       <Grid item xs={3}>
-        <img src={source} height="25px" />
+        <img src={source} height="25px" alt="icon for details" />
       </Grid>
       <Grid item xs={6} textAlign="left" paddingLeft="20px">
         {name}
@@ -72,7 +71,10 @@ const Details = ({ city }) => {
               margin: "1.4rem",
             }}
           >
-            <img src="https://img.icons8.com/fluency/48/000000/sunrise.png" />
+            <img
+              src="https://img.icons8.com/fluency/48/000000/sunrise.png"
+              alt="sunrise icon"
+            />
           </span>
           <span>{update_time(final_res.current.sunrise)}</span>
           <span
@@ -80,7 +82,10 @@ const Details = ({ city }) => {
               margin: "1.4rem",
             }}
           >
-            <img src="https://img.icons8.com/fluency/48/000000/sunset.png" />
+            <img
+              src="https://img.icons8.com/fluency/48/000000/sunset.png"
+              alt="sunset icon"
+            />
           </span>
           <span>{update_time(final_res.current.sunset)}</span>
           {/* <span>Feels Like</span> */}

@@ -24,7 +24,7 @@ const Footer = () => {
 
   const { isLoading } = useWeatherData();
 
-  console.log("entered footer");
+  // console.log("entered footer");
   const [open, setOpen] = useState(false);
   const [privacy, setPrivacy] = useState(false);
   const [terms, setTerms] = useState(false);
@@ -175,22 +175,10 @@ const Footer = () => {
             size="medium"
             color="secondary"
             //   className="right-border"
-            style={{
-              borderRight: "4px solid",
-              paddingRight: "1.3rem",
-              paddingLeft: "1.3rem",
-            }}
+
             onClick={handlePrivacy}
           >
             Privacy Policy
-          </Button>
-
-          <Button
-            size="medium"
-            color="secondary"
-            style={{ paddingLeft: "1.3rem" }}
-          >
-            Data Vendors
           </Button>
         </Grid>
 
@@ -212,7 +200,9 @@ const Footer = () => {
           }}
         >
           <CopyrightIcon fontSize="medium" />
-          Copyright WeatherOrg organization est. 2022
+          <i>
+            <b> Copyright WeatherOrg organization est. 2022 </b>
+          </i>
         </Grid>
         <Dialog open={open} onClose={handleFeedback} fullWidth>
           <DialogTitle>Send Feedback</DialogTitle>
@@ -258,7 +248,27 @@ const Footer = () => {
           <DialogTitle>Privacy Policy </DialogTitle>
           <DialogContent>
             <DialogContentText>
-              PRIVACY POLICY can be embedded here.
+              At WeatherOrg, We want to assure that We provide You, as a User,
+              with information and choice about Our policies and practices. We
+              do this so You may make informed decisions whether or not You want
+              to use WeatherOrg Sites and how you choose to use them. Please
+              read this Privacy Policy carefully before using WeatherOrg Sites.
+              When You use WeatherOrg Sites, You consent to the terms and
+              conditions and the practices described in this Privacy Policy. It
+              applies to You if You access WeatherOrg Sites directly, through a
+              third-party or by other means. It takes precedence over any
+              conflicting terms published by a third party regarding Your access
+              or use of WeatherOrg Sites. As WeatherOrg expands its offerings
+              and as technology evolves, We may, from time to time, update Our
+              privacy practices to address these changes. We encourage You to
+              check here on a regular basis for updates to this Privacy Policy.
+              WeatherOrg SITES, AND THE PRODUCTS, SERVICES AND ADVERTISING MADE
+              AVAILABLE THROUGH THEM, ARE NOT INTENDED FOR USE BY CHILDREN UNDER
+              THE AGE OF 18 WITHOUT PARENTAL SUPERVISION. WeatherOrg does not
+              intentionally collect any information from children under 18 years
+              of age. We will undertake to delete any details from such users
+              where a parent or guardian has notified us that any such details
+              have been obtained.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -270,7 +280,20 @@ const Footer = () => {
           <DialogTitle>Privacy Policy </DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Terms of Use can be embedded here.
+              The WeatherOrg site is (the "Site") is owned and operated by The
+              Weather Company, LLC, an IBM Business ("WUI"). Listed below are
+              the terms and conditions of use (the "Terms") for this Site. By
+              using, accessing and/or viewing information on the Site, you (the
+              .Participant.) agree to be bound by these Terms. If you violate
+              these Terms, WUI has the right to terminate your use of the Site
+              and/or take appropriate legal actions against you. We reserve the
+              right to change these Terms at any time by posting on the Site.
+              participant understands and agrees that its use of this Site is a
+              benefit voluntarily given by WUI and that WUI may withdraw that
+              benefit and rescind your participation at any time for any reason
+              in its sole discretion. If you do not agree to the Terms you
+              cannot use this Site or the services and information offered
+              herein.
             </DialogContentText>
           </DialogContent>
           <DialogActions>

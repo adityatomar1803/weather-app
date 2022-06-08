@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  LayerGroup,
-  Circle,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Grid } from "@mui/material";
 import { useWeatherData } from "../../context/weather.context";
 
@@ -21,7 +14,7 @@ const Maps = () => {
   const [snowCheck, setsnowCheck] = useState(false);
   const [pressureCheck, setpressureCheck] = useState(false);
 
-  console.log(tempCheck, windCheck, cloudCheck, rainCheck);
+  // console.log(tempCheck, windCheck, cloudCheck, rainCheck);
 
   // const negateTemp = () => {
   //   settempCheck(!tempCheck);

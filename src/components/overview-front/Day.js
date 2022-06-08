@@ -1,16 +1,16 @@
 import React from "react";
 import { useWeatherData } from "../../context/weather.context";
 import { Grid } from "@mui/material";
-import { update_date, update_time } from "../../helper/Helper";
+import { update_date } from "../../helper/Helper";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Det = ({ data }) => {
   let i = 0;
-  console.log("inside det");
+  // console.log("inside det");
   return data.map((item) => {
     i++;
-    console.log("inside det map,", item, item.dt);
+    // console.log("inside det map,", item, item.dt);
 
     return (
       <Grid
@@ -43,6 +43,7 @@ const Det = ({ data }) => {
           <img
             src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
             // height="50px"
+            alt="weather icon"
           />
           <div style={{ fontSize: "larger", marginTop: "0.6rem" }}>
             {item.clouds}%
@@ -50,6 +51,7 @@ const Det = ({ data }) => {
               height="15px"
               src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
               // style={{ transform: "rotateX(45)" }}
+              alt="icons"
             />
           </div>
         </div>

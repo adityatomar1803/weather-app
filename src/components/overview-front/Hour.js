@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const Det = ({ data }) => {
   let i = 0;
-  console.log("inside det");
+  // console.log("inside det");
   return data.map((item) => {
     i++;
-    // console.log("inside det map,", item, item.dt);
     return (
       <Grid
+        key={i}
         item
         sm={2}
         style={{
@@ -37,11 +37,13 @@ const Det = ({ data }) => {
           <img
             src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
             // height="50px"
+            alt="openweathermap icon"
           />
           <div style={{ fontSize: "larger", marginTop: "10px" }}>
             {item.clouds}%
             <img
               height="15px"
+              alt="openweathermap icon"
               src="https://img.icons8.com/external-prettycons-flat-prettycons/47/4a90e2/external-raindrops-weather-prettycons-flat-prettycons.png"
               // style={{ transform: "rotateX(45)" }}
             />
