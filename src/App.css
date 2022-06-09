@@ -1,6 +1,9 @@
 html {
   font-size: 15px;
 }
+body {
+  overflow-x: hidden;
+}
 .hourlyWeatherImage {
   height: auto;
   max-width: 100%;
