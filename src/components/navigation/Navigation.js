@@ -10,25 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { Backdrop } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 
-// import { createTheme } from "@mui/material/styles";
-
-// const theme = createTheme({
-//   components: {
-//     // Name of the component
-//     MuiButton: {
-//       styleOverrides: {
-//         // Name of the slot
-//         root: {
-//           // Some CSS
-//           fontSize: "1rem",
-//         },
-//       },
-//     },
-//   },
-// });
-
 const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
-  const { isLoading, final_res } = useWeatherData();
+  const { isLoading, final_res, setIsLoading } = useWeatherData();
 
   const [toggle, setToggle] = useState(false);
   // console.log("toggle is ", toggle);
@@ -56,7 +39,7 @@ const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
         container
         spacing={2}
         justifyContent="space-evenly"
-        backgroundColor={blackTheme ? "black" : "#326a84"}
+        backgroundColor={blackTheme ? "black" : "white"}
         alignItems={"center"}
         marginTop="-1rem"
         marginLeft="-1rem"
@@ -74,7 +57,10 @@ const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
           </div>
         </Grid>
         <Grid item xs={4} sm={3} md={3}>
-          <div className="city-data">
+          <div
+            className="city-data"
+            style={{ color: blackTheme ? "white" : "black" }}
+          >
             <span>{city}</span>
             <span style={{ marginLeft: "10px" }}>
               {parseInt(final_res.current.temp - 273.15)}
@@ -90,9 +76,17 @@ const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
         </Grid>
         <Grid item xs={6} sm={3} md={1} className="Refresh">
           <div
-            className="nav-item"
+            className={blackTheme ? "nav-item-black" : "nav-item"}
             onClick={() => {
-              setValue(inputValue);
+              setIsLoading(true);
+              setValue((prev) => "Delhi, India");
+              setTimeout(() => {
+                setValue((prev) => inputValue);
+                setIsLoading(false);
+              }, 1500);
+              console.log("between executed");
+
+              // setValue((prev) => inputValue);
             }}
           >
             <span className="material-icons">refresh</span>
@@ -100,7 +94,10 @@ const Navigation = ({ data_city, finalCity, city, blackTheme, setTheme }) => {
           </div>
         </Grid>
         <Grid item xs={4} sm={3} md={1} className="Theme">
-          <div className="nav-item" onClick={() => setTheme(!blackTheme)}>
+          <div
+            className={blackTheme ? "nav-item-black" : "nav-item"}
+            onClick={() => setTheme(!blackTheme)}
+          >
             <span className="material-icons">dark_mode</span> Theme
           </div>
         </Grid>

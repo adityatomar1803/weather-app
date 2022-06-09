@@ -28,7 +28,7 @@ const Details = ({ city }) => {
     return <div>Loading...</div>;
   } else {
     return (
-      <Grid container marginBottom="1.4rem">
+      <Grid container marginBottom="2rem" paddingBottom="1rem">
         <Grid
           item
           xs={12}

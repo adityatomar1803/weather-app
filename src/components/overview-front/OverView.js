@@ -100,6 +100,7 @@ const OverView = ({ city }) => {
         sx={{
           color: "white",
         }}
+        boxShadow="0px 5px 18px #888888"
       >
         <Grid item xs={12}>
           <Typography
@@ -125,9 +126,9 @@ const OverView = ({ city }) => {
         <Grid
           container
           className="card-content"
-          marginBottom="1.3rem"
+          marginBottom="2.5rem"
           justifyContent="space-evenly"
-          alignItems={"center"}
+          paddingBottom="1rem"
         >
           <Grid item xs={6} md={4}>
             <img

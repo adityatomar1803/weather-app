@@ -333,6 +333,7 @@ export const DailyCard = ({ city }) => {
           backgroundColor={"white"}
           marginTop="0.6rem"
           borderRadius="0.6rem"
+          boxShadow="0px 5px 18px #888888"
         >
           <div style={{ marginTop: "1.3rem" }}>
             <span style={{ fontSize: "1.6rem", fontWeight: "bold" }}>

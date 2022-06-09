@@ -38,7 +38,6 @@ html {
 }
 
 .city-data {
-  color: white;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -297,7 +296,7 @@ html {
 .App {
   text-align: center;
   /* background-image: linear-gradient(#326a84, #d3f1ff); */
-  background-image: linear-gradient(#326a84, #c6e1ec);
+  /* background-image: linear-gradient(#326a84, #c6e1ec); */
   /* background-repeat: no-repeat; */
   background-attachment: fixed;
 }
@@ -327,16 +326,25 @@ html {
   z-index: 1; */
 }
 
-.nav-item {
+.nav-item-black {
   color: white;
   text-align: flex-end;
   align-items: legacy;
   display: flex;
 }
-.nav-item:hover {
+
+.nav-item {
+  text-align: flex-end;
+  align-items: legacy;
+  display: flex;
+}
+.nav-item:hover,
+.nav-item-black:hover {
   cursor: pointer;
-  background-color: white;
-  color: cornflowerblue;
+  /* background-color: white;
+  color: cornflowerblue; */
+  background-color: cornflowerblue;
+  color: white;
   border-radius: 10px;
   padding: 7px 7px 7px 7px;
 }
@@ -396,6 +404,7 @@ html {
 .card-content {
   display: flex;
   align-items: center;
+  background: #00000042;
 }
 
 .card {

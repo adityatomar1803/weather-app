@@ -47,6 +47,8 @@ const Footer = () => {
         backgroundColor={"white"}
         justifyContent={"center"}
         alignItems="center"
+        boxShadow="0px 5px 18px #888888"
+        marginTop="1.5rem"
       >
         <Grid item sm={12} md={4} style={{ padding: "0.6rem" }}>
           <div

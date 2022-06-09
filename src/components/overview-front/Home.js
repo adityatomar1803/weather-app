@@ -11,9 +11,18 @@ const Home = ({ city }) => {
   return (
     <Grid container justifyContent={"space-evenly"} alignItems={"center"}>
       <Grid item xs={10} md={7}>
-        <OverView city={city} />
+        <OverView city={city} boxShadow="0px 0px 18px #888888" />
       </Grid>
-      <Grid item xs={10} md={3}>
+
+      <Grid
+        item
+        xs={10}
+        md={3}
+        boxShadow="0px 5px 18px #888888"
+        marginTop="1rem"
+        borderRadius="1rem"
+        backgroundColor="white"
+      >
         <AirQuality />
       </Grid>
 
@@ -25,7 +34,8 @@ const Home = ({ city }) => {
         backgroundColor="white"
         // marginBottom="0.6rem"
         marginTop="1.5rem"
-        borderRadius="0.6rem"
+        borderRadius="1rem"
+        boxShadow="0px 5px 18px #888888"
       >
         <Today city={city} />
       </Grid>
@@ -39,6 +49,7 @@ const Home = ({ city }) => {
         // marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="0.6rem"
+        boxShadow="0px 5px 18px #888888"
       >
         <Details city={city} />
       </Grid>
@@ -52,6 +63,7 @@ const Home = ({ city }) => {
         // marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="0.6rem"
+        boxShadow="0px 5px 18px #888888"
       >
         <Hour />
       </Grid>
@@ -64,6 +76,7 @@ const Home = ({ city }) => {
         marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="0.6rem"
+        boxShadow="0px 5px 18px #888888"
       >
         <Day />
       </Grid>

@@ -54,7 +54,9 @@ export const WeatherProvider = ({ city, children }) => {
   }, [city]);
 
   return (
-    <WeatherContext.Provider value={{ final_res, isLoading, pollution_data }}>
+    <WeatherContext.Provider
+      value={{ final_res, isLoading, pollution_data, setIsLoading }}
+    >
       {children}
     </WeatherContext.Provider>
   );
