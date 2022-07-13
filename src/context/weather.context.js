@@ -32,7 +32,7 @@ export const WeatherProvider = ({ city, children }) => {
       .then((res) => {
         setFinal(res);
         return fetch(
-          `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${appid}`
+          `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${appid}`
         );
       })
       .then((res) => res.json())
