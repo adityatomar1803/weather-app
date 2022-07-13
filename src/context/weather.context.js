@@ -7,12 +7,13 @@ export const WeatherProvider = ({ city, children }) => {
   const [final_res, setFinal] = useState({});
   const [pollution_data, setPollutionData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
   useEffect(() => {
     var demo_city = city.split(",", 2)[0];
     var country = city.split(",", 2)[1];
 
-    var url_lat = `http://api.openweathermap.org/geo/1.0/direct?q=${demo_city},${country}&limit=1&appid=${appid}`;
+    var url_lat = `https://api.openweathermap.org/geo/1.0/direct?q=${demo_city},${country}&limit=1&appid=${appid}`;
 
     var lat = "";
     var lon = "";
