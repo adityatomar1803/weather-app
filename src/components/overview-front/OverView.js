@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useWeatherData } from "../../context/weather.context";
 
 import { ButtonGroup } from "@mui/material";
@@ -15,8 +15,8 @@ const OverView = ({ city }) => {
   const { isLoading, final_res } = useWeatherData();
   const [temp, setTemp] = useState(0);
 
-  const temperatureGetter =
-    // const temperatureGetter = useCallback(
+  // const temperatureGetter =
+  const temperatureGetter = useCallback(
     (type = "C") => {
       if (type === "C") {
         c_variant = "contained";
@@ -38,14 +38,16 @@ const OverView = ({ city }) => {
         setTemp(parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32));
       }
       // console.log("c, k, f are :", c_variant, k_variant, f_variant);
-      return temp;
-    };
+      // return temp;
+    },
+    [final_res]
+  );
 
   useEffect(() => {
     if (!isLoading) {
       temperatureGetter();
     }
-  }, [final_res.current.temp, isLoading]);
+  }, [isLoading, temperatureGetter]);
 
   if (isLoading) {
     return <div>Loading...</div>;
