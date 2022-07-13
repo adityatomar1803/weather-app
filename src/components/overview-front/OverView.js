@@ -15,35 +15,37 @@ const OverView = ({ city }) => {
   const { isLoading, final_res } = useWeatherData();
   const [temp, setTemp] = useState(0);
 
-  const temperatureGetter = (type = "C") => {
-    if (type === "C") {
-      c_variant = "contained";
-      f_variant = "outlined";
-      k_variant = "outlined";
-      // temp = parseInt(final_res.current.temp - 273.15);
-      setTemp(parseInt(final_res.current.temp - 273.15));
-    } else if (type === "K") {
-      c_variant = "outlined";
-      f_variant = "outlined";
-      k_variant = "contained";
-      // temp = parseInt(final_res.current.temp);
-      setTemp(parseInt(final_res.current.temp));
-    } else {
-      c_variant = "outlined";
-      k_variant = "outlined";
-      f_variant = "contained";
-      // temp = parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32);
-      setTemp(parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32));
-    }
-    // console.log("c, k, f are :", c_variant, k_variant, f_variant);
-    return temp;
-  };
+  const temperatureGetter =
+    // const temperatureGetter = useCallback(
+    (type = "C") => {
+      if (type === "C") {
+        c_variant = "contained";
+        f_variant = "outlined";
+        k_variant = "outlined";
+        // temp = parseInt(final_res.current.temp - 273.15);
+        setTemp(parseInt(final_res.current.temp - 273.15));
+      } else if (type === "K") {
+        c_variant = "outlined";
+        f_variant = "outlined";
+        k_variant = "contained";
+        // temp = parseInt(final_res.current.temp);
+        setTemp(parseInt(final_res.current.temp));
+      } else {
+        c_variant = "outlined";
+        k_variant = "outlined";
+        f_variant = "contained";
+        // temp = parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32);
+        setTemp(parseInt(((final_res.current.temp - 273.15) * 9) / 5 + 32));
+      }
+      // console.log("c, k, f are :", c_variant, k_variant, f_variant);
+      return temp;
+    };
 
   useEffect(() => {
     if (!isLoading) {
       temperatureGetter();
     }
-  });
+  }, [final_res.current.temp, isLoading]);
 
   if (isLoading) {
     return <div>Loading...</div>;
