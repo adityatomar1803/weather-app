@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Navigation from "./navigation/Navigation";
 import { WeatherProvider } from "../context/weather.context";
 import MainNavigation from "./navigation/MainNavigation";
-import Footer from "./Footer";
+// import Footer from "./Footer";
+const Footer = React.lazy(() => import("./Footer"));
 
 const MainComponent = () => {
   const [citiess, setCities] = useState([]);
@@ -45,7 +46,9 @@ const MainComponent = () => {
           city={selected_city || "Delhi, India"}
           blackTheme={blackTheme}
         />
-        <Footer />
+        <Suspense fallback={<div>loading...</div>}>
+          <Footer />
+        </Suspense>
       </WeatherProvider>
     </div>
   );

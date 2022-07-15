@@ -8,10 +8,10 @@ import {
   useResolvedPath,
   useMatch,
 } from "react-router-dom";
-// import Home from "../overview-front/Home";
+import Home from "../overview-front/Home";
 import { useWeatherData } from "../../context/weather.context";
 
-const Home = React.lazy(() => import("../overview-front/Home"));
+// const Home = React.lazy(() => import("../overview-front/Home"));
 const Maps = React.lazy(() => import("../Maps/Maps"));
 const Stats = React.lazy(() => import("../Statistics/Stats"));
 const Air = React.lazy(() => import("../Air"));

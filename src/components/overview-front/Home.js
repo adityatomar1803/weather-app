@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 import { Grid } from "@mui/material";
 
-const OverView = React.lazy(() => import("./OverView"));
+// const OverView = React.lazy(() => import("./OverView"));
+import OverView from "./OverView";
 const AirQuality = React.lazy(() => import("./AirQuality"));
 const Today = React.lazy(() => import("./Today"));
 const Details = React.lazy(() => import("./Details"));
@@ -12,9 +13,9 @@ const Home = ({ city }) => {
   return (
     <Grid container justifyContent={"space-evenly"} alignItems={"center"}>
       <Grid item xs={10} md={7}>
-        <Suspense fallback={<div></div>}>
-          <OverView city={city} boxShadow="0px 0px 18px #888888" />
-        </Suspense>
+        {/* <Suspense fallback={<div></div>}> */}
+        <OverView city={city} boxShadow="0px 0px 18px #888888" />
+        {/* </Suspense> */}
       </Grid>
 
       <Grid
