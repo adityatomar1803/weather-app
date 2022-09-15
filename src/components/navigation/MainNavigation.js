@@ -24,7 +24,7 @@ const HourlyCard = React.lazy(() => import("../cards/HourlyCard"));
 // import About from "../About";
 // import { DailyCard } from "../cards/DailyCard";
 
-export function CustomLink({ children, to, ...props }) {
+export function CustomLink({ children, to, blackTheme ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
@@ -33,7 +33,7 @@ export function CustomLink({ children, to, ...props }) {
       <Link
         style={{
           display: "block",
-          borderBottom: match ? "2px solid white" : "none",
+          borderBottom: match ? { blackTheme? "2px solid black" : "2px solid white" } : "none",
         }}
         to={to}
         {...props}
@@ -61,32 +61,32 @@ const MainNavigation = ({ city, blackTheme }) => {
             backgroundColor={blackTheme ? " #2c2c31" : "#0E2333"}
           >
             <Grid item xs={4} sm={3} md={2}>
-              <CustomLink to="/" className="Link">
+              <CustomLink to="/" className="Link" blackTheme={blackTheme}>
                 Today
               </CustomLink>
             </Grid>
             <Grid item xs={4} sm={3} md={2}>
-              <CustomLink to="/hourly" className="Link">
+              <CustomLink to="/hourly" className="Link" blackTheme={blackTheme}>
                 Hourly
               </CustomLink>
             </Grid>
             <Grid item xs={4} sm={3} md={2}>
-              <CustomLink to="/weekly" className="Link">
+              <CustomLink to="/weekly" className="Link" blackTheme={blackTheme}>
                 Weekly
               </CustomLink>
             </Grid>
             <Grid item xs={4} sm={3} md={2}>
-              <CustomLink to="/stats" className="Link">
+              <CustomLink to="/stats" className="Link" blackTheme={blackTheme}>
                 Statistics
               </CustomLink>
             </Grid>
             <Grid item xs={4} sm={3} md={2}>
-              <CustomLink to="/maps" className="Link">
+              <CustomLink to="/maps" className="Link" blackTheme={blackTheme}>
                 Maps
               </CustomLink>
             </Grid>
             <Grid item xs={4} sm={3} md={2}>
-              <CustomLink to="/air" className="Link">
+              <CustomLink to="/air" className="Link" blackTheme={blackTheme}>
                 Air Quality
               </CustomLink>
             </Grid>
