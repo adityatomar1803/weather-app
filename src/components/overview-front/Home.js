@@ -9,12 +9,12 @@ const Details = React.lazy(() => import("./Details"));
 const Hour = React.lazy(() => import("./Hour"));
 const Day = React.lazy(() => import("./Day"));
 
-const Home = ({ city }) => {
+const Home = ({ city, blackTheme }) => {
   return (
     <Grid container justifyContent={"space-evenly"} alignItems={"center"}>
       <Grid item xs={10} md={7}>
         {/* <Suspense fallback={<div></div>}> */}
-        <OverView city={city} boxShadow="0px 0px 18px #888888" />
+        <OverView city={city} boxShadow= {blackTheme ? "none" :  "0px 0px 18px #888888" } />
         {/* </Suspense> */}
       </Grid>
 
@@ -22,7 +22,7 @@ const Home = ({ city }) => {
         item
         xs={10}
         md={3}
-        boxShadow="0px 5px 18px #888888"
+        boxShadow= { blackTheme ? "none" : "0px 5px 18px #888888" }
         marginTop="1rem"
         borderRadius="1rem"
         backgroundColor="white"
@@ -41,7 +41,7 @@ const Home = ({ city }) => {
         // marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="1rem"
-        boxShadow="0px 5px 18px #888888"
+        boxShadow= { blackTheme ? "none" : "0px 5px 18px #888888" }
       >
         <Suspense fallback={<div></div>}>
           <Today city={city} />
@@ -57,7 +57,7 @@ const Home = ({ city }) => {
         // marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="0.6rem"
-        boxShadow="0px 5px 18px #888888"
+        boxShadow= { blackTheme ? "none" : "0px 5px 18px #888888" }
       >
         <Suspense fallback={<div></div>}>
           <Details city={city} />
@@ -73,7 +73,7 @@ const Home = ({ city }) => {
         // marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="0.6rem"
-        boxShadow="0px 5px 18px #888888"
+        boxShadow= { blackTheme ? "none" : "0px 5px 18px #888888" }
       >
         <Suspense fallback={<div></div>}>
           <Hour />
@@ -88,7 +88,7 @@ const Home = ({ city }) => {
         marginBottom="0.6rem"
         marginTop="1.5rem"
         borderRadius="0.6rem"
-        boxShadow="0px 5px 18px #888888"
+        boxShadow= { blackTheme ? "none" : "0px 5px 18px #888888" }
       >
         <Suspense fallback={<div></div>}>
           <Day />
