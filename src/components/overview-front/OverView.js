@@ -11,7 +11,7 @@ var c_variant = null;
 var f_variant = null;
 var k_variant = null;
 // var temp = 0;
-const OverView = ({ city }) => {
+const OverView = ({ city, boxShadow }) => {
   const { isLoading, final_res } = useWeatherData();
   const [temp, setTemp] = useState(0);
 
@@ -103,7 +103,7 @@ const OverView = ({ city }) => {
         sx={{
           color: "white",
         }}
-        boxShadow="0px 5px 18px #888888"
+        boxShadow={boxShadow}
       >
         <Grid item xs={12}>
           <Typography
