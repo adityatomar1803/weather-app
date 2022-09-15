@@ -33,7 +33,7 @@ export function CustomLink({ children, to, blackTheme, ...props }) {
       <Link
         style={{
           display: "block",
-          borderBottom: match ? { blackTheme? "2px solid black" : "2px solid white" } : "none",
+          borderBottom: match ? ( blackTheme? "2px solid black" : "2px solid white" ) : "none",
         }}
         to={to}
         {...props}
