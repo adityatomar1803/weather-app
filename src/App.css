@@ -334,6 +334,9 @@ body {
   text-align: flex-end;
   align-items: legacy;
   display: flex;
+  transition: 0.7s;
+  padding: 7px 7px 7px 7px;
+  border-radius: 10px;
   /* transition: 0.5s; */
 }
 
