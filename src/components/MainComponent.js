@@ -47,7 +47,7 @@ const MainComponent = () => {
           blackTheme={blackTheme}
         />
         <Suspense fallback={<div>loading...</div>}>
-          <Footer />
+          <Footer blackTheme={blackTheme}/>
         </Suspense>
       </WeatherProvider>
     </div>
