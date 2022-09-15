@@ -96,9 +96,9 @@ const MainNavigation = ({ city, blackTheme }) => {
 
         <Suspense fallback={<div></div>}>
           <Routes>
-            <Route exact path="/" element={<Home city={city} />} />
-            <Route exact path="/hourly" element={<HourlyCard city={city} />} />
-            <Route exact path="/weekly" element={<DailyCard city={city} />} />
+            <Route exact path="/" element={<Home city={city} blackTheme={blackTheme} />} />
+            <Route exact path="/hourly" element={<HourlyCard city={city} blackTheme={blackTheme}  />} />
+            <Route exact path="/weekly" element={<DailyCard city={city}  blackTheme={blackTheme} />} />
             <Route exact path="/stats" element={<Stats />} />
             <Route exact path="/maps" element={<Maps />} />
             <Route exact path="/air" element={<Air city={city} />} />
