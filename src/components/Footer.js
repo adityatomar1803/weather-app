@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { useWeatherData } from "../context/weather.context";
 
-const Footer = () => {
+const Footer = ({blackTheme}) => {
   const navigate = useNavigate();
 
   const { isLoading } = useWeatherData();
@@ -47,7 +47,7 @@ const Footer = () => {
         backgroundColor={"white"}
         justifyContent={"center"}
         alignItems="center"
-        boxShadow="0px 5px 18px #888888"
+        boxShadow= blackTheme? "none" : "0px 5px 18px #888888"
         marginTop="1.5rem"
       >
         <Grid item sm={12} md={4} style={{ padding: "0.6rem" }}>
