@@ -24,7 +24,7 @@ const HourlyCard = React.lazy(() => import("../cards/HourlyCard"));
 // import About from "../About";
 // import { DailyCard } from "../cards/DailyCard";
 
-export function CustomLink({ children, to, blackTheme ...props }) {
+export function CustomLink({ children, to, blackTheme, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
