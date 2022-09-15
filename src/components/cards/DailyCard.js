@@ -312,7 +312,7 @@ const DisplayData = ({ data }) => {
   );
 };
 
-const DailyCard = ({ city }) => {
+const DailyCard = ({ city, blackTheme }) => {
   const { isLoading, final_res } = useWeatherData();
 
   if (!isLoading) {
