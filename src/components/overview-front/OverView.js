@@ -104,6 +104,7 @@ const OverView = ({ city, boxShadow }) => {
           color: "white",
         }}
         boxShadow={boxShadow}
+        border={boxShadow=='none' ? "1px solid white" : "none"}
       >
         <Grid item xs={12}>
           <Typography
